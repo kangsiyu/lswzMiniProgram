@@ -37,6 +37,12 @@
     <view class='icon-arrow'></view>
   </navigator>
 </view>
+<view class='nav-view-two'>
+  <navigator url='../星辰获取/星辰获取最优计算' class='nav_one'>
+    <text class='nav_text'>星辰获取最优计算</text>
+    <view class='icon-arrow'></view>
+  </navigator>
+</view>
 </view>
 
 <view class='bottom'>

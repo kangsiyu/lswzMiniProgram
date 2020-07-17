@@ -1,4 +1,4 @@
-/* pages/升堡消耗/升堡消耗.wxss */
+/* pages/星辰获取/星辰获取最优计算.wxss */
 page {
   height: 100%;
 }
@@ -42,6 +42,27 @@ page {
   position: fixed;
   bottom: 0rpx;
   height: constant(safe-area-inset-bottom);
+}
+.adShow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.adtitle{
+  margin-left: 20rpx;
+  width: 50%-20rpx;
+}
+.adButton{
+  width: 30%;
+  background-color: #fc6060;
+  margin-right: 20px;
+  height: 40px;
+  text-align: center;
+  border: 1rpx solid white;
+  border-radius: 20px;
+  line-height: 40px;
+  color: white;
 }
 .result{
   margin-left: 20rpx;

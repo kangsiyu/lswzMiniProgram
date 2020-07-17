@@ -641,6 +641,7 @@ Page({
     var dependInfo = '前置建筑';
     for (let index = Math.floor(this.data.currentLevel); index < Math.floor(this.data.targetLevel); index++) {
       const element = this.data.levelInfo[index];
+      console.log('element'+element);
       mutouTotal = Math.floor(mutouTotal)+Math.floor(element.mutou);
       liangshiTotal = Math.floor(liangshiTotal) +Math.floor(element.liangshi);
       tieTotal = Math.floor(tieTotal) +Math.floor(element.tie);
@@ -652,14 +653,24 @@ Page({
         console.log('depend:'+depend);
         var dependId = depend.dependId;
         console.log('dependId:'+dependId);
-        var dataName = eval('(' + this.data.dependInfo + ')');
+        var dataName = this.data.dependInfo;
         dependStr = dependStr+'  '+depend.dependLevel+'级'+dataName[dependId];
       }
       dependInfo = dependInfo+'\n'+Math.floor(index+1)+'堡:'+dependStr;
-      this.setData({
-        resultStr:"王城计算结果\n"+dependInfo
-      })
     }
-
+    var ziyuan = '资源消耗\n(仅王城升级，前置建筑的后续版本加入):\n木头:'+formatStr(mutouTotal)+'\n粮食:'+formatStr(liangshiTotal)+'\n铁:'+formatStr(tieTotal)+'\n宝石:'+formatStr(baoshiTotal)+'\n星辰:'+formatStr(xingchenTotal)+'\n';
+    this.setData({
+      resultStr:"王城计算结果:\n"+ziyuan+dependInfo
+    })
   }
 })
+
+const formatStr = n => {
+  var result = n;
+  if(n>10000 && n<100000000){
+    result = result/10000 + "w";
+  }else if(n>100000000){
+  result = Math.floor(n/100000000)  +"亿"+Math.floor( (n-Math.floor(n/100000000)*100000000)/10000)+ "w";
+  }
+  return result;
+}

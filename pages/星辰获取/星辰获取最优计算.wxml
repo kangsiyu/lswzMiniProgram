@@ -1,0 +1,15 @@
+<!--pages/星辰获取/星辰获取最优计算.wxml-->
+<view class='tab_container'>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">月消费金额</text>
+      </view>
+      <input class="input" placeholder="月投资星辰消费金额" auto-focus type="number" bindinput="moneyInput"></input>
+  </view>
+  <text class="result">{{resultStr}}</text>
+  <view wx:if='{{adShow}}' class="adShow" bindtap="clickAd">
+  <text class="adtitle">编码不易\n觉得好鼓励一下吧</text>
+  <view class="adButton">点击鼓励</view>
+  </view>
+  <button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+</view>
