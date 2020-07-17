@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/baobing/baobing",
+    "pages/jice/jice",
+    "pages/imageBrower/imageBrower",
+    "pages/鬼斧神工/鬼斧神工",
+    "pages/升堡消耗/升堡消耗"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "乱世小助手",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

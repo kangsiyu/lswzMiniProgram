@@ -1,0 +1,37 @@
+<!--pages/baobing/baobing.wxml-->
+<dropdownmenu dropDownMenuTitle='{{dropDownMenuTitle}}' dropDownMenuDistrictData='{{data1}}' bind:selectedItem='selectedItem' />
+<view class="wraper">
+	<view class="page-body">
+		<view class="inputContainer">
+			<view class="titleContainer">
+				<text class="title">加速时间</text>
+			</view>
+			<input class="input" placeholder="输入加速时间(小时)" type="number" bindinput="timeAllInput" auto-focus></input>
+		</view>
+    	<view class="inputContainer">
+			<view class="titleContainer">
+				<text class="title">1000个兵时间</text>
+			</view>
+			<input class="unitInput" placeholder="小时" type="number" bindinput="hoursInput"></input>
+      <view class="unitTitle">
+				<text class="title">时</text>
+			</view>
+      <input class="unitInput" placeholder="分钟" type="number" bindinput="minInput"></input>
+      <view class="unitTitle">
+				<text class="title">分</text>
+			</view>
+      <input class="unitInput" placeholder="秒" type="number" bindinput="secondInput"></input>
+      <view class="unitTitle">
+				<text class="title">秒</text>
+			</view>
+		</view>
+    	<view class="inputContainer">
+			<view class="titleContainer">
+				<text class="title">每次训练兵个数</text>
+			</view>
+			<input class="input" placeholder="（选填）" type="number" bindinput="onceCountInput"></input>
+		</view>
+	</view>
+	<text class="result">{{resultStr}}</text>
+	<button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+</view>

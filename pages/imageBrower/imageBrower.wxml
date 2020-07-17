@@ -1,0 +1,16 @@
+<!--pages/imageBrower/imageBrower.wxml-->
+<view class="warpper">
+  <view class="author">
+    <text>作者:{{author}}</text>
+  </view>
+  <view class="imageContainer">
+      <image src="{{url}}" bindtap="show" mode="aspectFill"></image>
+  </view>
+  <view class="tips">
+      <text class="tipText">点击预览完整图片</text>
+  </view>
+  <view class='bottom'>
+  <ad unit-id="adunit-4386808aecbb9776" ad-intervals="30"></ad>
+</view>
+</view>
+

@@ -1,0 +1,17 @@
+<!--pages/升堡消耗/升堡消耗.wxml-->
+<view class='tab_container'>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">当前王城等级</text>
+      </view>
+      <input class="input" placeholder="输入当前王城等级" auto-focus type="number" bindinput="currentInput"></input>
+  </view>
+  <view class="inputContainer">
+      <view class="titleContainer">
+        <text class="title">目标王城等级</text>
+      </view>
+      <input class="input" placeholder="输入目标王城等级" type="number" bindinput="targetInput"></input>
+  </view>
+  <text class="result">{{resultStr}}</text>
+  <button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/jice/jice.wxml-->
+<view class="wraper">
+    <view class="page-body">
+      <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+         <input class="weui-input" auto-focus placeholder="请输入计策1当前等级" type="number" bindinput="current_one"/>
+          <input class="weui-input" placeholder="请输入计策1目标等级" type="number" bindinput="target_one"/>
+          <input class="weui-input" placeholder="请输入相同计策2当前等级（选填）" type="number" bindinput="current_two"/>
+          <input class="weui-input" placeholder="请输入相同计策2目标等级（选填）" type="number" bindinput="target_two"/>
+          <view class="tips"></view>
+          <text class="tips">50碎片所需元宝</text>
+          <input class="weui-input" placeholder="请输入50碎片所需元宝" type="number" bindinput="priceChange" value="{{price}}"/>
+        </view>
+      </view>
+  </view>
+</view>
+<text class="result">{{resultStr}}</text>
+<button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+</view>

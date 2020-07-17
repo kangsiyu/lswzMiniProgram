@@ -1,0 +1,43 @@
+/* pages/jice/jice.wxss */
+.weui-cells__title{
+  padding-top: 40rpx;
+  margin-left: 20rpx;
+}
+.weui-input{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  height: 40px;
+  border: 1rpx solid black;
+  border-radius: 20px;
+  padding-left: 20rpx;
+}
+page{
+  height: 100%;
+}
+.wraper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height:100%;
+}
+.tips{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 40rpx;
+}
+.calculate{
+  height: 40px;
+  border: 1rpx solid white;
+  background-color: #fc6060;
+  width: 100%;
+  color: white;
+  position: fixed;
+  bottom: 0rpx;
+  height: constant(safe-area-inset-bottom);
+}
+.result{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
