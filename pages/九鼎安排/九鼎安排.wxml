@@ -1,0 +1,50 @@
+<!--pages/九鼎安排/九鼎安排.wxml-->
+<block wx:if="{{isShowConfirm}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>请输入团信息</text>
+            </view>
+            <view class='toast-main'>
+                <view class='toast-input'>
+                    <input placeholder='输入团的名字' bindinput='setValue' data-name='stuEidtName'></input>
+                </view>
+								<view class='toast-input'>
+                    <input placeholder='输入游戏名字' bindinput='setGameName' data-name='stuEidtName'></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='cancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button bindtap='confirmAcceptance'>确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+  </block>
+<view class='tab_container'>
+	<view class='tab_header'>
+	</view>
+
+	<view class='tab_content' class='tab_content'>
+    <view class='nav-view-two' bindtap="openJiudingTeam">
+				<text class='nav_text'>我要开团</text>
+        <view class="arrowContainer">
+          <view class='icon-arrow'></view>
+        </view>
+		</view>
+		<view class='nav-view-two' bindtap="openMyJoinTeam">
+			<text class='nav_text'>我参加的团</text>
+        <view class="arrowContainer">
+          <view class='icon-arrow'></view>
+        </view>
+		</view>
+	</view>
+</view>
+<!-- 
+<view class='bottom'>
+	<ad unit-id="adunit-07a1c74ca6acaed0" ad-intervals="30"></ad>
+</view> -->

@@ -17,11 +17,7 @@ Page({
     })
   },
   onLoad: function () {
-    var appInstance = getApp();
-    console.log(appInstance.globalData.sysWidth); 
-    this.setData({
-      sysWidth: appInstance.globalData.sysWidth
-    });
+    
   },
   baobing:function(){
     wx.navigateTo({

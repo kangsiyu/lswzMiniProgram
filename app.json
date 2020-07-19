@@ -7,7 +7,9 @@
     "pages/imageBrower/imageBrower",
     "pages/鬼斧神工/鬼斧神工",
     "pages/升堡消耗/升堡消耗",
-    "pages/星辰获取/星辰获取最优计算"
+    "pages/星辰获取/星辰获取最优计算",
+    "pages/九鼎安排/九鼎安排",
+    "pages/九鼎安排/九鼎开团/九鼎开团"
   ],
   "window": {
     "backgroundTextStyle": "light",

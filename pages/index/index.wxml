@@ -1,51 +1,57 @@
 <!--index.wxml-->
 <view class='tab_container'>
- <view class='tab_header'>
- </view>
+	<view class='tab_header'>
+	</view>
 
-<view class='tab_content' class='tab_content'>
-   <view class='nav-view-two'>
-     <navigator url='../baobing/baobing' class='nav_one'>
-        <text class='nav_text'>我要爆兵</text>
-        <view class='icon-arrow'></view>
-     </navigator>
-</view>
+	<view class='tab_content' class='tab_content'>
+		<view class='nav-view-two'>
+			<navigator url='../baobing/baobing' class='nav_one'>
+				<text class='nav_text'>我要爆兵</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
 
-<view class='nav-view-two'>
-  <navigator url='../jice/jice' class='nav_one'>
-    <text class='nav_text'>计策花费</text>
-    <view class='icon-arrow'></view>
-  </navigator>
-</view>
+		<view class='nav-view-two'>
+			<navigator url='../jice/jice' class='nav_one'>
+				<text class='nav_text'>计策花费</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
 
-<view class='nav-view-two'>
-  <navigator url='../imageBrower/imageBrower?author=莫璇&url=http://123.206.91.105/1.png' class='nav_one'>
-    <text class='nav_text'>飞升花费</text>
-    <view class='icon-arrow'></view>
-  </navigator>
-</view>
+		<view class='nav-view-two'>
+			<navigator url='../imageBrower/imageBrower?author=莫璇&url=http://123.206.91.105/1.png' class='nav_one'>
+				<text class='nav_text'>飞升花费</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
 
-<view class='nav-view-two'>
-  <navigator url='../鬼斧神工/鬼斧神工' class='nav_one'>
-    <text class='nav_text'>鬼斧神工活动计算</text>
-    <view class='icon-arrow'></view>
-  </navigator>
-</view>
-<view class='nav-view-two'>
-  <navigator url='../升堡消耗/升堡消耗' class='nav_one'>
-    <text class='nav_text'>王城升级查询</text>
-    <view class='icon-arrow'></view>
-  </navigator>
-</view>
-<view class='nav-view-two'>
-  <navigator url='../星辰获取/星辰获取最优计算' class='nav_one'>
-    <text class='nav_text'>星辰获取最优计算</text>
-    <view class='icon-arrow'></view>
-  </navigator>
-</view>
+		<view class='nav-view-two'>
+			<navigator url='../鬼斧神工/鬼斧神工' class='nav_one'>
+				<text class='nav_text'>鬼斧神工活动计算</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../升堡消耗/升堡消耗' class='nav_one'>
+				<text class='nav_text'>王城升级查询</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../星辰获取/星辰获取最优计算' class='nav_one'>
+				<text class='nav_text'>星辰获取最优计算</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../九鼎安排/九鼎安排' class='nav_one'>
+				<text class='nav_text'>九鼎安排</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+	</view>
 </view>
 
 <view class='bottom'>
-  <ad unit-id="adunit-07a1c74ca6acaed0" ad-intervals="30"></ad>
-</view>
+	<ad unit-id="adunit-07a1c74ca6acaed0" ad-intervals="30"></ad>
 </view>

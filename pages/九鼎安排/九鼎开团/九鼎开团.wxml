@@ -1,0 +1,5 @@
+<!--pages/九鼎安排/九鼎开团/九鼎开团.wxml-->
+<scroll-view class="scroll" scroll-x="true">
+  <image class="background" src="../jiudingmap.jpg"></image>
+</scroll-view>
+

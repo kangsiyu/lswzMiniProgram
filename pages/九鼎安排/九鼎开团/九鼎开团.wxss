@@ -1,0 +1,9 @@
+/* pages/九鼎安排/九鼎开团/九鼎开团.wxss */
+.scroll{
+  width: 100%;
+}
+.background{
+  width: 540px;
+  height: 326px;
+  position: absolute;
+}
