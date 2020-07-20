@@ -222,5 +222,10 @@ Page({
     wx.navigateTo({
       url: '九鼎开团/九鼎开团',
     })
+  },
+  testApply:function(){
+    wx.navigateTo({
+      url: '九鼎申请/九鼎申请?applyId=1503f3385f145762003a714d4f5f085e&applyTeamName=teamTest&teamOwner=beiwo'
+    })
   }
 })

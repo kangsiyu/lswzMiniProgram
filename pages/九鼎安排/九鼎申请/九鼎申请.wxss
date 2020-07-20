@@ -1,0 +1,165 @@
+/* pages/九鼎安排/九鼎申请/九鼎申请.wxss */
+.title{
+  height: 100px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+.titleText{
+  text-align: center;
+  line-height: 100px;
+  font-size: 35px;
+}
+.inputContainer{
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid gainsboro;
+}
+.teamNameContainer{
+  width: 33%;
+  text-align: center;
+  background-color:#f0f0f0;
+  align-items: center;
+  justify-items: center;
+}
+.teamName{
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  font-size: 13px;
+}
+.unitTitle{
+  width: 11%;
+  text-align: center;
+  background-color:#f0f0f0;
+  align-items: center;
+  justify-items: center;
+}
+.input{
+  padding-left: 20px;
+}
+.applyButton{
+  height: 40px;
+  border: 1rpx solid white;
+  background-color: #fc6060;
+  width: 100%;
+  color: white;
+  position: fixed;
+  bottom: 0rpx;
+  height: constant(safe-area-inset-bottom);
+}
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+
+.toastbg {
+  opacity: 0.2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 40%;
+}
+
+.toast-title {
+  padding-left: 5%;
+  background-color: #fc6060;
+  color: white;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+  text-align: center;
+}
+
+.toast-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  border: 1px solid #ddd;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.toast-button {
+  display: flex;
+  flex-direction: row;
+}
+
+.button1 {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button2 {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button1 button {
+  background-color: white;
+  color: black;
+  border-radius: 0px;
+  border-bottom-left-radius: 16rpx;
+}
+
+.button2 button{
+  background-color: white;
+  color: black;
+  border-radius: 0px;
+  border-bottom-right-radius: 16rpx;
+} 
+.jixianContainer{
+  text-align: left;
+  padding-left: 5%;
+  height: 30px;
+}  
+.jixianCheckBox{
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 90px;
+  display: flex;
+  flex-wrap: wrap;
+} 
+.jixianCheck{
+  height: 20px;
+  width: 60px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border: 1px solid #f0f0f0;
+}
+.selectedCheck{
+  border: 1px solid #fc6060;
+  color: #fc6060;
+}

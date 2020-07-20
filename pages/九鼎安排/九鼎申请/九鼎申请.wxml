@@ -1,0 +1,52 @@
+<!--pages/九鼎安排/九鼎申请/九鼎申请.wxml-->
+<view class="title"> 
+  <text class="titleText">申请入团</text>
+</view>
+<view class="inputContainer">
+			<view class="teamNameContainer">
+				<text class="teamName">团队名称</text>
+			</view>
+			<view class="input">
+          <text>{{applyTeamName}}</text>
+      </view>
+</view>
+<view class="inputContainer">
+			<view class="teamNameContainer">
+				<text class="teamName">团长昵称</text>
+			</view>
+			<view class="input">
+          <text>{{teamOwner}}</text>
+      </view>
+</view>
+	<button class="applyButton" bindtap="applyButtonAction" style="width:100%">我要申请</button>
+<block wx:if="{{showApplyCard}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>请录入申请信息</text>
+            </view>
+            <view class='toast-main'>
+								<view class='toast-input'>
+                    <input placeholder='输入游戏名字' bindinput='setGameName' data-name='stuEidtName' auto-focus></input>
+                </view>
+                <view class="jixianContainer">
+                <text>我的极限</text>
+               </view>
+                <view class="jixianCheckBox">
+                    <view class="jixianCheck {{item.select?'selectedCheck':''}}" wx:for="{{bingZhongList}}" wx:key="item" bindtap="jixianCheckTap" id="{{item.id}}">
+                    <text>{{item.title}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='cancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button bindtap='confirmAcceptance'>确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+  </block>

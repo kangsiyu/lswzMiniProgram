@@ -1,5 +1,34 @@
 <!--pages/九鼎安排/九鼎开团/九鼎开团.wxml-->
-<scroll-view class="scroll" scroll-x="true">
+<scroll-view class="scroll" scroll-x="true" scroll-y="true">
+  <movable-area class="area_less" scale-area>
   <image class="background" src="../jiudingmap.jpg"></image>
+	<view class="teamPersonTitle">
+		<text class="teamPersonTitleText">{{title}}</text>
+		<view class="applyInfo" bindtap="applyInfoClick">
+			<text class="applyText">申请名单</text>
+		</view>
+	</view>
+	<movable-view class="teamPersonContainer" wx:for="{{teamPersons}}" wx:key="item" direction="all" y='360px' bindtouchmove="ballMoveEvent" bindtouchend="ballMoveEnd">
+	</movable-view>
+  </movable-area>
 </scroll-view>
-
+<block wx:if="{{isShowApplyInfo}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>申请信息</text>
+            </view>
+            <scroll-view class='toast-main' scroll-y="true">
+               <view class="applyList">
+                <view class="applyerName" wx:for="{{applyPersons}}">
+                    <text class="applyerNameText">{{item.applyName}}</text>
+                 </view>
+               </view> 
+            </scroll-view>
+            <view class='button1'>
+              <button catchtap='cancel' style="width:100%">取消</button>
+            </view>
+        </view>
+    </view>
+  </block>

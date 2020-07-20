@@ -42,6 +42,12 @@
           <view class='icon-arrow'></view>
         </view>
 		</view>
+        <view class='nav-view-two' bindtap="testApply">
+			<text class='nav_text'>临时申请</text>
+        <view class="arrowContainer">
+          <view class='icon-arrow'></view>
+        </view>
+		</view>
 	</view>
 </view>
 <!-- 

@@ -9,7 +9,8 @@
     "pages/升堡消耗/升堡消耗",
     "pages/星辰获取/星辰获取最优计算",
     "pages/九鼎安排/九鼎安排",
-    "pages/九鼎安排/九鼎开团/九鼎开团"
+    "pages/九鼎安排/九鼎开团/九鼎开团",
+    "pages/九鼎安排/九鼎申请/九鼎申请"
   ],
   "window": {
     "backgroundTextStyle": "light",
