@@ -1,7 +1,8 @@
 // pages/九鼎安排/九鼎安排.js
 const app = getApp()
+var databaseUtil = require('../../utils/dataBaseUtil')
 const db = wx.cloud.database({
-  env: 'lswztool-debug-ngiig'
+  env: databaseUtil.getDataBaseEnv()
 })
 Page({
 
@@ -225,7 +226,7 @@ Page({
   },
   testApply:function(){
     wx.navigateTo({
-      url: '九鼎申请/九鼎申请?applyId=1503f3385f145762003a714d4f5f085e&applyTeamName=teamTest&teamOwner=beiwo'
+      url: '九鼎申请/九鼎申请?applyTeamId=1503f3385f145762003a714d4f5f085e&applyTeamName=teamTest&teamOwner=beiwo&teamOwnerId=od2Q542kMcoSPvEFM7v6GmKHHcOw'
     })
   }
 })

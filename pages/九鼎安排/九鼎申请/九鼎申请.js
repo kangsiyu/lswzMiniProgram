@@ -1,4 +1,9 @@
 // pages/九鼎安排/九鼎申请/九鼎申请.js
+var databaseUtil = require('../../../utils/dataBaseUtil')
+const db = wx.cloud.database({
+  env: databaseUtil.getDataBaseEnv()
+})
+const app = getApp()
 Page({
 
   /**
@@ -8,6 +13,7 @@ Page({
       applyTeamId:null,
       applyTeamName:null,
       teamOwner:null,
+      teamOwnerId:null,
       showApplyCard:false,
       bingZhongList:[
       {
@@ -59,11 +65,18 @@ Page({
    */
   onLoad: function (options) {
      this.setData({
-      applyTeamId:options.applyId,
+      applyTeamId:options.applyTeamId,
       applyTeamName:options.applyTeamName,
       teamOwner:options.teamOwner,
+      teamOwnerId:options.teamOwnerId
      });
      console.log(this.data.applyTeamId+"\n"+this.data.applyTeamName+'\n'+this.data.teamOwner);
+     if (app.globalData.openid == null) {
+      var that = this;
+      app.loginInfo(function(openid){
+        console.log('鉴权回调成功');
+      });
+     }
   },
 
   /**
@@ -132,14 +145,106 @@ Page({
     })
   },
   confirmAcceptance:function(){
-
+    var that = this;
+    if (this.data.applyTeamId == null||
+      app.globalData.openid == null ||
+      this.data.teamOwnerId == null) {
+      wx.showToast({
+        title: '数据错误',
+        icon:'none'
+      })
+      return;
+    }
+    // if (this.data.teamOwnerId == app.globalData.openid) {
+    //   wx.showToast({
+    //     title: '主公已经是这个团的团长了哦',
+    //     icon:'none'
+    //   })
+    //   return;
+    // }
+    if (this.data.userInputName) {
+      let isHaveJiXian = false;
+      var jixianList = [];
+      for (let index = 0; index < this.data.bingZhongList.length; index++) {
+        const element = this.data.bingZhongList[index];
+        if (element.select) {
+          isHaveJiXian = true;
+          jixianList.push(element.title);
+        }
+      }
+      if (isHaveJiXian && jixianList.length) {
+        db.collection('applyPersonList').where(
+          {
+            applyTeamId:that.data.applyTeamId,
+            applyPersonId:app.globalData.openid
+          }
+        ).get({
+          success:function(res){
+            console.log(res.data);
+            if (res.data.length!=0) {
+              wx.showToast({
+                title: '已经申请过了',
+                icon:'none'
+              })
+              that.setData({
+                userInputName:null,
+                showApplyCard: false,
+              })
+              console.log('haveAlreadyTeam');
+            }else{
+              console.log(jixianList);
+              that.addApply(jixianList);
+            }
+          }
+        })
+      }else{
+        wx.showToast({
+          title: '请至少选一个极限吧',
+          icon:'none'
+        })
+      }
+    }else{
+      wx.showToast({
+        title: '请输入名称',
+        icon:'none'
+      })
+    }
+     
   },
   jixianCheckTap:function(e){
     console.log(e);
-    var index = e.currentTarget.id;
+    var index = Math.floor(e.currentTarget.id);
     console.log(index);
+    var value = this.data.bingZhongList[index];
+    console.log(value);
+    var current='bingZhongList['+index+'].select';
     this.setData({
-      'bingZhongList[index].select':bingZhongList[index].select?false:true
+      [current]:!value.select
+    })
+    console.log( this.data.bingZhongList[index]);
+  },
+  addApply:function(e){
+    var that = this;
+    db.collection('applyPersonList').add({
+      // data 字段表示需新增的 JSON 数据
+      data: {
+        applyTeamId: that.data.applyTeamId,
+        applyTeamName:that.data.applyTeamName,
+        applyPersonId:app.globalData.openid,
+        applyUserName:that.data.userInputName,
+        teamOwner:that.data.teamOwner,
+        teamOwnerId:that.data.teamOwnerId,
+        jixianList:e.value,
+        enterStatus:false
+      },
+      success: function(res) {
+        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+        console.log(res)
+        var that = this;
+        wx.showToast({
+          title: '申请成功',
+        })
+      }
     })
   }
 })

@@ -1,7 +1,8 @@
 // pages/九鼎安排/九鼎开团/九鼎开团.js
 const app = getApp()
+var databaseUtil = require('../../../utils/dataBaseUtil')
 const db = wx.cloud.database({
-  env: 'lswztool-debug-ngiig'
+  env: databaseUtil.getDataBaseEnv()
 })
 Page({
 
@@ -14,6 +15,7 @@ Page({
      teamPersons:[],
      isShowApplyInfo:false,
      applyPersons:[],
+     teamId:null,
   },
 
   /**
@@ -38,7 +40,8 @@ Page({
               //为创建者
               that.setData({
                 title:'我的团员',
-                teamPersons:item.teamPerson
+                teamPersons:item.teamPerson,
+                teamId:item._id
               })
           }
         }else{
@@ -110,6 +113,30 @@ Page({
      
    },
    applyInfoClick:function(){
+     var that = this;
+    db.collection('applyPersonList').where(
+      {
+        applyTeamId:that.data.teamId
+      }
+    ).get({
+      success:function(res){
+        console.log(res.data);
+        if (res.data.length!=0) {
+          wx.showToast({
+            title: '已经申请过了',
+            icon:'none'
+          })
+          that.setData({
+            userInputName:null,
+            showApplyCard: false,
+          })
+          console.log('haveAlreadyTeam');
+        }else{
+          console.log(jixianList);
+          that.addApply(jixianList);
+        }
+      }
+    })
       this.setData({
         isShowApplyInfo:true
       })

@@ -28,7 +28,7 @@
             </view>
             <view class='toast-main'>
 								<view class='toast-input'>
-                    <input placeholder='输入游戏名字' bindinput='setGameName' data-name='stuEidtName' auto-focus></input>
+                    <input placeholder='输入游戏名字' bindinput='setGameName' auto-focus></input>
                 </view>
                 <view class="jixianContainer">
                 <text>我的极限</text>
