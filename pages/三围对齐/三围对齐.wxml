@@ -1,0 +1,33 @@
+<!--pages/三围对齐/三围对齐.wxml-->
+<view class='tab_container'>
+  <view class="bingzhongContainer">
+      <view class="titleContainer">
+      <text class="titleBingzhong">极限兵种</text>
+        </view>
+      <view class="jixianCheckBox">
+                    <view class="jixianCheck {{item.select?'selectedCheck':''}}" wx:for="{{bingZhongList}}" wx:key="item" bindtap="jixianCheckTap" id="{{item.id}}">
+                    <text class="bingName">{{item.title}}</text>
+                    </view>
+      </view>
+  </view>
+  <view class="inputContainer">
+			<view class="titleContainer">
+				<text class="title">战争大厅三围</text>
+			</view>
+			<input class="unitInput" placeholder="攻" type="number" bindinput="hoursInput"></input>
+      <view class="unitTitle">
+				<text class="title">攻</text>
+			</view>
+      <input class="unitInput" placeholder="血" type="number" bindinput="minInput"></input>
+      <view class="unitTitle">
+				<text class="title">血</text>
+			</view>
+      <input class="unitInput" placeholder="防" type="number" bindinput="secondInput"></input>
+      <view class="unitTitle">
+				<text class="title">防</text>
+			</view>
+		</view>
+  <text class="result">{{resultStr}}</text>
+  <button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+</view>
+
