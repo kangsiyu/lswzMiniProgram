@@ -1,0 +1,22 @@
+<!--pages/注灵玉计算/注灵玉计算.wxml-->
+<view class='tab_container'>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">当前注灵等级</text>
+      </view>
+      <input class="input" placeholder="输入当前注灵等级" auto-focus type="number" bindinput="currentInput"></input>
+  </view>
+  <view class="inputContainer">
+      <view class="titleContainer">
+        <text class="title">目标注灵等级</text>
+      </view>
+      <input class="input" placeholder="输入目标注灵等级" type="number" bindinput="targetInput"></input>
+  </view>
+  <text class="tips">感谢 月璇 提供数据支持</text>
+  <text class="result">{{resultStr}}</text>
+  <view wx:if='{{adShow}}' class="adShow" bindtap="clickAd">
+  <text class="adtitle">编码不易\n觉得好鼓励一下吧</text>
+  <view class="adButton">点击鼓励</view>
+  </view>
+  <button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+</view>

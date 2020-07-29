@@ -44,11 +44,23 @@
 			</navigator>
 		</view>
 		<view class='nav-view-two'>
+			<navigator url='../注灵玉计算/注灵玉计算' class='nav_one'>
+				<text class='nav_text'>注灵玉计算</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../imageBrower/imageBrower?author=莫璇&url=cloud://lswztool-debug-ngiig.6c73-lswztool-debug-ngiig-1302666573/shentai.jpg' class='nav_one'> 
+				<text class='nav_text'>神台数据查询</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<!-- <view class='nav-view-two'>
 			<navigator url='../九鼎安排/九鼎安排' class='nav_one'>
 				<text class='nav_text'>九鼎安排</text>
 				<view class='icon-arrow'></view>
 			</navigator>
-		</view>
+		</view> -->
 	</view>
 </view>
 

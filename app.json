@@ -10,7 +10,8 @@
     "pages/星辰获取/星辰获取最优计算",
     "pages/九鼎安排/九鼎安排",
     "pages/九鼎安排/九鼎开团/九鼎开团",
-    "pages/九鼎安排/九鼎申请/九鼎申请"
+    "pages/九鼎安排/九鼎申请/九鼎申请",
+    "pages/注灵玉计算/注灵玉计算"
   ],
   "window": {
     "backgroundTextStyle": "light",

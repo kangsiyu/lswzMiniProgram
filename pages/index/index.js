@@ -32,6 +32,9 @@ Page({
   onShareAppMessage: function () {
 
   },
+  onShareTimeLine:function(){
+    
+  }
 })
 wx.showShareMenu({
   withShareTicket: true,

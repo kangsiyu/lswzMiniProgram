@@ -15,6 +15,11 @@
       </view>
   </view>
 </view>
+<text class="tips">感谢 锅贴 提供数据支持</text>
 <text class="result">{{resultStr}}</text>
+ <view wx:if='{{adShow}}' class="adShow" bindtap="clickAd">
+  <text class="adtitle">编码不易\n觉得好鼓励一下吧</text>
+  <view class="adButton">点击鼓励</view>
+  </view>
 <button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
 </view>

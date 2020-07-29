@@ -1,4 +1,5 @@
 // pages/baobing/baobing.js
+let interstitialAd = null
 Page({
   baobingInfo:{
     zhanliUnit:0,
@@ -20,6 +21,7 @@ Page({
   data: {
     resultStr:'爆兵结果：',
     dropDownMenuTitle: ['选择兵种'],
+    adOnceShow:false,
     data1: [{
         id: 0,
         title: '枪兵',
@@ -500,7 +502,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 在页面onLoad回调事件中创建插屏广告实例
+if (wx.createInterstitialAd) {
+  interstitialAd = wx.createInterstitialAd({
+    adUnitId: 'adunit-eeadbceccb30036f'
+  })
+  interstitialAd.onLoad(() => {})
+  interstitialAd.onError((err) => {})
+  interstitialAd.onClose(() => {})
+} 
   },
 
   /**
@@ -584,6 +594,21 @@ Page({
     console.log(once + this.timeInfo.countUnit);
   },
   calculateAction:function(){
+    // 在适合的场景显示插屏广告
+    console.log('adOnceShow = '+this.data.adOnceShow)
+    if (interstitialAd && this.data.adOnceShow == false) {
+      var that = this;
+      that.setData({
+        adOnceShow:true
+       })
+      interstitialAd.show().catch((err) => {
+       console.error(err)
+       that.setData({
+        adOnceShow:false
+       })
+       
+    })
+    }
     if(this.baobingInfo.zhanliUnit == 0 ||
       this.timeInfo.timeUnit == 0 ||
       (this.timeInfo.minUnit == 0 && this.timeInfo.hoursUnit == 0 && this.timeInfo.secUnit == 0)){

@@ -1,4 +1,4 @@
-// pages/星辰获取/星辰获取最优计算.js
+// pages/注灵玉计算/注灵玉计算.js
 let videoAd = null;
 Page({
 
@@ -6,8 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    resultStr:"星辰获取最优计算参考：",
-    money:0,
+    resultStr:"计算结果:",
+    targetLevel:0,
+    currentLevel:0,
+    levelInfo:[
+      0,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,43,46,49,52,55,58,61,64,67,70,73,76,79,82,85,88,91,94,97,100,103,107,111,115,119,123,127,131,135,139,143,153,163,173,183,193,203,213,223,233,243,253,263,273,283,293,303,313,323,333,343,353,363,373,383,393,403,413,423,433,443,453,463,473,483,493,503,513,523,533,543,553,563,573,583,593,603,613,623,633
+    ],
     onceLoad:false,
     adShow:false,
     adError:false,
@@ -19,7 +23,7 @@ Page({
   onLoad: function (options) {
     if (wx.createRewardedVideoAd) {
       videoAd = wx.createRewardedVideoAd({
-        adUnitId: 'adunit-ad27f0a8535a2694'
+        adUnitId: 'adunit-0d7844021f9a0a8b'
       })
       videoAd.onLoad(() => {
 
@@ -100,9 +104,14 @@ Page({
   onShareAppMessage: function () {
 
   },
-  moneyInput:function(e){
+  currentInput:function(e){
     this.setData({
-      money:e.detail.value
+      currentLevel:e.detail.value
+    })
+  },
+  targetInput:function(e){
+    this.setData({
+      targetLevel:e.detail.value
     })
   },
   clickAd:function(){
@@ -123,42 +132,32 @@ Page({
     }
   },
   calculateAction:function(){
-    console.log(this.data.money);
-    let money = Math.floor(this.data.money);
-    var resultStr = '星辰获取最优计算参考:\n';
-    if (money >= 0) {
-       resultStr = resultStr + '玩命打野怪\n' + '各种星辰免费活动\n'+'每日任务完成\n'+'攒金币破灵\n';
+    console.log(this.data.currentLevel+'\n'+this.data.targetLevel)
+    let current = Math.floor(this.data.currentLevel);
+    let target = Math.floor(this.data.targetLevel);
+    if (current<=0 ||
+      target>100 ||
+        current >= 100 ||
+        target <= 0 ||
+        target<=current) {
+       wx.showToast({
+         title: '数据错误',
+         icon:'none'
+       })
+       return;
     }
-    if (money >= 6 && money<68) {
-       resultStr = resultStr+"天道酬勤\n";
-    }else if (money >= 68 && money<74) {
-      resultStr = resultStr+"星辰俸禄\n";
-    }else if (money > 74) {
-      resultStr = resultStr+"星辰月卡\n天道酬勤\n";
-    }
-    //4周的天道+月卡68+6的最低累充
-    if (money>146 && money <214) {
-      resultStr = resultStr+'累充道具换星辰\n';
-    }else if (money>=214 && money<=220) {
-      resultStr = resultStr+'金币月卡，金币留着去破灵或者等消费活动再买星辰\n';
-    }
-    //够790抽双倍
-    if (money>152) {
-      resultStr = resultStr+'等双倍凤舞的时候选星辰，得到的幸运币换星辰或等礼包折上折的时候（双11可能会有）买星辰礼包\n';
-    }
-    if (money>=3000) {
-      resultStr = resultStr+'买日常的星辰礼包\n';
-    }
-    if (money>=10000) {
-      resultStr = resultStr+'买星辰的限时礼包\n如果已经可以买超核商城，优先买超核商城\n';
-    }
-    if (money >= 50000) {
-      resultStr = '星辰获取最优计算参考：\n大佬你不需要考虑，见到星辰买就对了，都划算！'
-    }
-    var adShow = (this.data.onceLoad || this.data.adError)?false:true;
+     let total = 0;
+     for (let index = current; index < target; index++) {
+       const element = this.data.levelInfo[index];
+       console.log(element+'\n');
+       total = total + element;
+     }
+     var result = '计算结果:\n'+ '共消耗'+total+'个注灵玉';
+     var adShow = (this.data.onceLoad || this.data.adError)?false:true;
     this.setData({
-      resultStr:resultStr,
+      resultStr:result,
       adShow:adShow,
     })
   }
+
 })

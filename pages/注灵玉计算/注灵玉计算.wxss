@@ -1,30 +1,37 @@
-/* pages/jice/jice.wxss */
-.weui-cells__title{
-  padding-top: 40rpx;
-  margin-left: 20rpx;
-}
-.weui-input{
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-  margin-top: 20rpx;
-  height: 40px;
-  border: 1rpx solid black;
-  border-radius: 20px;
-  padding-left: 20rpx;
-}
-page{
+/* pages/注灵玉计算/注灵玉计算.wxss */
+page {
   height: 100%;
 }
-.wraper{
+
+.tab_container {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height:100%;
+  margin-top: 20px;
 }
-.tips{
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-  margin-top: 40rpx;
+.inputContainer{
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid gainsboro;
+}
+.titleContainer{
+  width: 33%;
+  text-align: center;
+  background-color:#f0f0f0;
+  align-items: center;
+  justify-items: center;
+}
+.title{
+  display: block;
+  line-height: 50px;
+  text-align: center;
+}
+.input{
+  padding-left: 20px;
 }
 .calculate{
   height: 40px;
@@ -41,6 +48,11 @@ page{
   margin-right: 20rpx;
   margin-top: 20rpx;
   margin-bottom: 60px;
+}
+.tips{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
 }
 .adShow{
   display: flex;
@@ -62,9 +74,4 @@ page{
   border-radius: 20px;
   line-height: 40px;
   color: white;
-}
-.tips{
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-  margin-top: 20rpx;
 }

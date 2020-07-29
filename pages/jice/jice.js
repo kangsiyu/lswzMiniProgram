@@ -1,4 +1,5 @@
 // pages/jice/jice.js
+let videoAd = null;
 Page({
 
   /**
@@ -11,6 +12,9 @@ Page({
      currentTwo:0,
      targetTwo :0,
      resultStr:'计算结果',
+     onceLoad:false,
+     adShow:false,
+     adError:false,
      item:[
        {
          needSuipian:0
@@ -172,7 +176,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (wx.createRewardedVideoAd) {
+      videoAd = wx.createRewardedVideoAd({
+        adUnitId: 'adunit-ac442b9e6cae78e6'
+      })
+      videoAd.onLoad(() => {})
+      videoAd.onError((err) => {
+        if (err) {
+          this.setData({
+            adError:true
+          })
+        }
+      })
+      videoAd.onClose((res) => {
+        if (res && res.isEnded) {
+          wx.showToast({
+            title: '感谢支持',
+          })
+        } else {
+          // 播放中途退出，不下发游戏奖励
+          wx.showToast({
+            title: '完整看完\n才算支持哦',
+            icon:'none'
+          })
+          this.setData({
+            adShow:true,
+            onceLoad:false
+          })
+        }
+      })
+    }
   },
 
   /**
@@ -229,8 +262,9 @@ Page({
      var currentTwo = this.data.currentTwo;
      var targetTwo = this.data.targetTwo;
     if (targetOne == 0) {
-      this.setData({
-        resultStr:'输入正确数据'
+      wx.showToast({
+        title: '输入正确数据',
+        icon:'none'
       })
       return;
     }
@@ -241,8 +275,10 @@ Page({
      var price = this.data.price;
      var resultStr = Math.ceil(needSuipian/50)*price;
      console.log("needSuipian = "+needSuipian);
+     var adShow = (this.data.onceLoad || this.data.adError)?false:true;
      this.setData({
-       resultStr:'计算结果：\n需要计策碎片：'+needSuipian+'个\n花费：'+resultStr+"元宝"
+       resultStr:'计算结果：\n需要计策碎片：'+needSuipian+'个\n花费：'+resultStr+"元宝",
+       adShow:adShow,
      })
   },
   current_one:function(e){
@@ -279,5 +315,22 @@ Page({
       price:price
     })
     console.log("price = "+this.data.price);
+  },
+  clickAd:function(){
+    console.log('click');
+    this.setData({
+      onceLoad:true,
+      adShow:false,
+    })
+    if (videoAd) {
+      videoAd.show().catch(() => {
+        // 失败重试
+        videoAd.load()
+          .then(() => videoAd.show())
+          .catch(err => {
+            console.log('激励视频 广告显示失败')
+          })
+      })
+    }
   },
 })
