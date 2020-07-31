@@ -58,6 +58,10 @@
 				<text class='nav_text'>三围对齐</text>
 				<view class='icon-arrow'></view>
 			</navigator>
+			<!-- <navigator url='../三围分享/三围分享?shareGone=1500&shareFang=1100&shareXue=900&bingZhong=枪兵&nickName=斯雨&head=https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epaL7kvaicIXwTXO6w1mDZC4awhKNqR6ZNB6YFBGKiaF6ZAGjuvXdjXQYvFibNHxpTebmUgpa4BoBmaA/132' class='nav_one'>
+				<text class='nav_text'>三围对齐</text>
+				<view class='icon-arrow'></view>
+			</navigator> -->
 		</view>
 </view>
 

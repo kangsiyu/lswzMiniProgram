@@ -1,33 +1,77 @@
 <!--pages/三围对齐/三围对齐.wxml-->
 <view class='tab_container'>
-  <view class="bingzhongContainer">
-      <view class="titleContainer">
-      <text class="titleBingzhong">极限兵种</text>
-        </view>
-      <view class="jixianCheckBox">
-                    <view class="jixianCheck {{item.select?'selectedCheck':''}}" wx:for="{{bingZhongList}}" wx:key="item" bindtap="jixianCheckTap" id="{{item.id}}">
-                    <text class="bingName">{{item.title}}</text>
-                    </view>
-      </view>
-  </view>
-  <view class="inputContainer">
-			<view class="titleContainer">
-				<text class="title">战争大厅三围</text>
-			</view>
-			<input class="unitInput" placeholder="攻" type="number" bindinput="hoursInput"></input>
-      <view class="unitTitle">
-				<text class="title">攻</text>
-			</view>
-      <input class="unitInput" placeholder="血" type="number" bindinput="minInput"></input>
-      <view class="unitTitle">
-				<text class="title">血</text>
-			</view>
-      <input class="unitInput" placeholder="防" type="number" bindinput="secondInput"></input>
-      <view class="unitTitle">
-				<text class="title">防</text>
+	<view class="bingzhongContainer">
+		<view class="titleContainer">
+			<text class="titleBingzhong">极限兵种</text>
+		</view>
+		<view class="jixianCheckBoxOrigin">
+			<view class="jixianCheckOrigin {{item.select?'selectedCheck':''}}" wx:for="{{bingZhongList}}" wx:key="item" bindtap="jixianCheckTap" id="{{item.id}}">
+				<text class="bingName">{{item.title}}</text>
 			</view>
 		</view>
-  <text class="result">{{resultStr}}</text>
-  <button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+	</view>
+	<view class="inputContainer">
+		<view class="titleContainer">
+			<text class="title">战争大厅三围</text>
+		</view>
+		<input class="unitInput" placeholder="攻" type="number" bindinput="gongjiInput"></input>
+		<view class="unitTitle">
+			<text class="title">攻</text>
+		</view>
+		<input class="unitInput" placeholder="防" type="number" bindinput="fangyuInput"></input>
+		<view class="unitTitle">
+			<text class="title">防</text>
+		</view>
+		<input class="unitInput" placeholder="血" type="number" bindinput="xueInput"></input>
+		<view class="unitTitle">
+			<text class="title">血</text>
+		</view>
+	</view>
+	<text class="result">{{resultStr}}</text>
+  <view wx:if='{{showActiveModule}}' class="activeButtonContainer">
+    <view class="pkButtonContainer" bindtap="pkAction">
+    <text class="activeTitle">我要PK</text>
+    </view>
+    <view class="shareButtonContainer">
+    <button wx:if="{{openTypeShare}}" class="shareButtonContainer" open-type="share" style="width:100%">晒一下</button>
+    <button wx:if="{{!openTypeShare}}" class="shareButtonContainer" open-type="getUserInfo" style="width:100%" bindgetuserinfo="bindGetUserInfo">晒一下</button>
+    </view>
+  </view>
+	<button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
 </view>
-
+<block wx:if="{{showPKCard}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>请录入被PK的三围信息</text>
+            </view>
+            <view class='toast-main'>
+                <view class="jixianContainer">
+                <text>选择兵种</text>
+               </view>
+                <view class="jixianCheckBox">
+                    <view class="jixianCheck {{item.select?'selectedCheck':''}}" wx:for="{{pkBingZhongList}}" wx:key="item" bindtap="pkJixianCheckTap" id="{{item.id}}">
+                    <text>{{item.title}}</text>
+                    </view>
+                </view>
+                <view class="jixianContainer">
+                <text>大厅三围(攻击/防御/生命)</text>
+               </view>
+               <view class="pkContainer">
+                <input class="pkUnitInput" placeholder="攻" cursor-spacing="50" bindinput="pkGoneInput" type="number"></input>
+                <input class="pkUnitInput" placeholder="防" cursor-spacing="50" bindinput="pkFangInput" type="number"></input>
+                <input class="pkUnitInput" placeholder="血" cursor-spacing="50" bindinput="pkXueInput" type="number"></input>
+               </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='cancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button bindtap='confirmAcceptance'>确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+  </block>

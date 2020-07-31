@@ -12,7 +12,8 @@
     "pages/九鼎安排/九鼎开团/九鼎开团",
     "pages/九鼎安排/九鼎申请/九鼎申请",
     "pages/注灵玉计算/注灵玉计算",
-    "pages/三围对齐/三围对齐"
+    "pages/三围对齐/三围对齐",
+    "pages/三围分享/三围分享"
   ],
   "window": {
     "backgroundTextStyle": "light",
