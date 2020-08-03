@@ -11,11 +11,14 @@ Page({
     head:null,
     nickName:null,
     bingzhong:null,
-    resultStr:'',
+    resultStr:'PK录入三围会被对齐（各个兵种的极限由于武将和技能的不同导致三围的起始标准不同。例如投石刘邦固有技能就加攻击，而其他兵种没有加的话，那衡量的标准就应该是不一样的）',
     showPKCard:false,
     pkGoneInput:0,
     pkFangInput:0,
     pkXueInput:0,
+    zuduipkGoneInput:0,
+    zuduipkFangInput:0,
+    zuduipkXueInput:0,
     pkBingZhongList:[
       {
         id:0,
@@ -74,7 +77,7 @@ Page({
       shareFang:options.shareFang,
       shareXue:options.shareXue,
       head:options.head,
-      nickName:options.nickName+'的'+options.bingZhong,
+      nickName:options.nickName+'的'+options.bingZhong+'(包括组队三围)',
       bingzhong:options.bingZhong
     })
     console.log(this.data.shareGone + this.data.shareFang + this.data.shareXue+'\n'+this.data.nickName+this.data.bingzhong+this.data.head);
@@ -143,10 +146,30 @@ Page({
       pkXueInput:e.detail.value
     })
   },
+  zuduipkGoneInput:function(e){
+    this.setData({
+      zuduipkGoneInput:e.detail.value
+    })
+  },
+  zuduipkFangInput:function(e){
+    this.setData({
+      zuduipkFangInput:e.detail.value
+    })
+  },
+  zuduipkXueInput:function(e){
+    this.setData({
+      zuduipkXueInput:e.detail.value
+    })
+  },
   pkAction:function(){
     console.log('111');
     this.setData({
       showPKCard:true
+    })
+  },
+  addAction:function(){
+    wx.navigateTo({
+      url: '../三围对齐/三围对齐',
     })
   },
   cancel: function () {
@@ -170,23 +193,23 @@ Page({
         for (let j = 0; j < this.data.pkBingZhongList.length; j++) {
           const pkElement = this.data.pkBingZhongList[j];
           if (pkElement.select) {
-            var pkGongji = this.data.pkGoneInput-pkElement.repaireGong;
-            var pkFangyu = this.data.pkFangInput - pkElement.repaireFangyu;
-            var pkXue = this.data.pkXueInput-pkElement.repaireXue;
+            var pkGongji = this.data.pkGoneInput-pkElement.repaireGong+Number(this.data.zuduipkGoneInput);
+            var pkFangyu = this.data.pkFangInput - pkElement.repaireFangyu+Number(this.data.zuduipkFangInput);
+            var pkXue = this.data.pkXueInput-pkElement.repaireXue+Number(this.data.zuduipkXueInput);
             let pkTotal = Number(pkGongji)+Number(pkFangyu)+Number(pkXue);
             if (total<pkTotal) {
               result = result + '\nPK结果：主公胜\n主公对齐后三围高出对方'+Number(pkTotal-total) +'点\n';
-              result = result + '主公对齐后的三围为:\n攻击：';
+              result = result + '主公对齐后的三围(包括组队)为:\n攻击：';
               result = result+pkGongji+'  防御：'+pkFangyu +'  生命：'+pkXue+'\n总三围：'+pkTotal;
-              result = result + '\n对方对齐后的总三围为:\n'+total;
+              result = result + '\n对方对齐后的总三围为:'+total;
             }else if(total == pkTotal){
               result = result +'\nPK结果：打平了\n太巧了。主公和对方的三围竟是相同的\n';
-              result = result +'主公对齐后的三围为:\n攻击：';
+              result = result +'主公对齐后的三围(包括组队)为:\n攻击：';
               result = result+pkGongji+'  防御：'+pkFangyu +'  生命：'+pkXue+'\n总三围：'+pkTotal;
               result = result + '\n对方对齐后的总三围为:\n'+total;
             }else{
               result = result +'\nPK结果：对方胜\n主公加油变强呀\n';
-              result = result +'主公对齐后的三围为:\n攻击：';
+              result = result +'主公对齐后的三围(包括组队)为:\n攻击：';
               result = result+pkGongji+'  防御：'+pkFangyu +'  生命：'+pkXue+'\n总三围：'+pkTotal;
               result = result + '\n对方对齐后的总三围为:\n'+total;
             }

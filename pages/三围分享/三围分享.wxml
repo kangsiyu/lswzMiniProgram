@@ -23,6 +23,9 @@
       <view class="buttonContainer">
       <button class="button" style="width:100%" bindtap="pkAction">我要PK</button>
       </view>
+      <view class="buttonContainer">
+      <button class="button" style="width:100%" bindtap="addAction">发起我的PK</button>
+      </view>
   </view>
 </view>
 <view class='bottomAd'>
@@ -51,6 +54,14 @@
                 <input class="pkUnitInput" placeholder="攻" cursor-spacing="50" bindinput="pkGoneInput" type="number"></input>
                 <input class="pkUnitInput" placeholder="防" cursor-spacing="50" bindinput="pkFangInput" type="number"></input>
                 <input class="pkUnitInput" placeholder="血" cursor-spacing="50" bindinput="pkXueInput" type="number"></input>
+               </view>
+               <view class="jixianContainer">
+                <text>组队三围(攻击/防御/生命)</text>
+               </view>
+               <view class="pkContainer">
+                <input class="pkUnitInput" placeholder="攻" cursor-spacing="50" bindinput="zuduipkGoneInput" type="number"></input>
+                <input class="pkUnitInput" placeholder="防" cursor-spacing="50" bindinput="zuduipkFangInput" type="number"></input>
+                <input class="pkUnitInput" placeholder="血" cursor-spacing="50" bindinput="zuduipkXueInput" type="number"></input>
                </view>
             </view>
             <view class='toast-button'>

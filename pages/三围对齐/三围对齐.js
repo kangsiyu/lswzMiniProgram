@@ -10,16 +10,25 @@ Page({
     gongjiInput:0,
     xueInput:0,
     fangyuInput:0,
+    zuduigongjiInput:0,
+    zuduifangyuInput:0,
+    zuduixueInput:0,
     adOnceShow:false,
     showActiveModule:false,
     showPKCard:false,
     pkGoneInput:0,
     pkFangInput:0,
     pkXueInput:0,
+    zuduipkGoneInput:0,
+    zuduipkFangInput:0,
+    zuduipkXueInput:0,
     shareGone:0,
     shareFang:0,
     shareXue:0,
     openTypeShare:true,
+    showIntro:false,
+    showIntroCard:false,
+    showIntroText:'',
     resultStr:'三围对齐是指各个兵种的极限由于武将和技能的不同导致三围的起始标准不同。例如投石刘邦固有技能就加攻击，而其他兵种没有加的话，那衡量的标准就应该是不一样的。本工具就是减去除攻击技能外（每个兵种都有）附加的三围来达到统一的标准(忽略因为战争值带来的技能数值差距，数值均为满科技数值)',
     bingZhongList:[
       {
@@ -227,14 +236,29 @@ Page({
         gongjiInput:e.detail.value
       })
   },
+  zuduigongjiInput:function(e){
+    this.setData({
+      zuduigongjiInput:e.detail.value
+    })
+  },
   xueInput:function(e){
      this.setData({
        xueInput:e.detail.value
      })
   },
-  fangyuInput:function(e){
+  zuduixueInput:function(e){
     this.setData({
-      fangyuInput:e.detail.value
+      zuduixueInput:e.detail.value
+    })
+ },
+ fangyuInput:function(e){
+   this.setData({
+     fangyuInput:e.detail.value
+   })
+ },
+  zuduifangyuInput:function(e){
+    this.setData({
+      zuduifangyuInput:e.detail.value
     })
   },
   pkGoneInput:function(e){
@@ -251,6 +275,22 @@ Page({
     this.setData({
       pkXueInput:e.detail.value
     })
+  },
+  zuduipkGoneInput:function(e){
+    this.setData({
+      zuduipkGoneInput:e.detail.value
+    })
+  },
+  zuduipkFangInput:function(e){
+    this.setData({
+      zuduipkFangInput:e.detail.value
+    })
+  },
+  zuduipkXueInput:function(e){
+    this.setData({
+      zuduipkXueInput:e.detail.value
+    })
+    console.log(this.data.zuduipkXueInput);
   },
   jixianCheckTap:function(e){
     for (let index = 0; index < this.data.bingZhongList.length; index++) {
@@ -309,50 +349,56 @@ Page({
     })
     }
     var result = '';
+    var pKModuleShow = true;
+    var showIntro = true;
     for (let index = 0; index < this.data.bingZhongList.length; index++) {
       const element = this.data.bingZhongList[index];
       if (element.select) {
         console.log(element);
-        result = '对齐后三围为:\n攻击：';
-        var gongji = this.data.gongjiInput-element.repaireGong;
-        var xue = this.data.xueInput-element.repaireXue;
-        var fangyu = this.data.fangyuInput - element.repaireFangyu;
+        result = '对齐后三围(包括组队)为:\n攻击：';
+        var gongji = this.data.gongjiInput-element.repaireGong+Number(this.data.zuduigongjiInput);
+        var xue = this.data.xueInput-element.repaireXue+Number(this.data.zuduixueInput);;
+        var fangyu = this.data.fangyuInput - element.repaireFangyu+Number(this.data.zuduifangyuInput);
         this.setData({
           shareGone:gongji,
           shareFang:fangyu,
           shareXue:xue
         })
-        result = result+gongji+'\n防御：'+fangyu +'\n生命：'+xue +'\n对齐说明:'+element.des;
+        result = result+gongji+'\n防御：'+fangyu +'\n生命：'+xue;
         let total = Number(gongji)+Number(xue)+Number(fangyu);
         console.log('gongji'+gongji +'\nxue'+xue +'\nfangyu'+fangyu + '\n三围：'+total);
         if (index > 4 && index<7) {
+          result = result +'\n对齐说明:'+element.des;
           total = Number(xue)+Number(fangyu);
           result = result + '\n主公的两围为：'+total;
-          if (total>=2800) {
+          if (total>=3000) {
             result = result + '\n评级为 S 级了，请接受我的膜拜';
-         }else if(total >= 2400){
-           result = result + '\n评级为 A+ 级了，距离 S 级还差'+(2800-total)+'点两围';
-         }else if (total>=2000) {
-           result = result + '\n评级为 A 级了，距离 A+ 级还差'+(2400-total)+'点两围';
+         }else if(total >= 2600){
+           result = result + '\n评级为 A+ 级了，距离 S 级还差'+(3000-total)+'点两围';
+         }else if (total>=2200) {
+           result = result + '\n评级为 A 级了，距离 A+ 级还差'+(2600-total)+'点两围';
          }else{
-           result = result + '\n评级为 B 级了，距离 A 级还差'+(2000-total)+'点两围';
+           result = result + '\n评级为 B 级了，距离 A 级还差'+(2200-total)+'点两围';
          }
+         pKModuleShow = false;
+         showIntro = false;
         }else{
           result = result + '\n主公的三围为：'+total;
-          if (total>=4000) {
+          if (total>=4500) {
             result = result + '\n评级为 S 级了，请接受我的膜拜';
-         }else if(total >= 3500){
-           result = result + '\n评级为 A+ 级了，距离 S 级还差'+(4000-total)+'点三围';
-         }else if (total>3000) {
-           result = result + '\n评级为 A 级了，距离 A+ 级还差'+(3500-total)+'点三围';
+         }else if(total >= 4000){
+           result = result + '\n评级为 A+ 级了，距离 S 级还差'+(4500-total)+'点三围';
+         }else if (total>3500) {
+           result = result + '\n评级为 A 级了，距离 A+ 级还差'+(4000-total)+'点三围';
          }else{
-           result = result + '\n评级为 B 级了，距离 A 级还差'+(3000-total)+'点三围';
+           result = result + '\n评级为 B 级了，距离 A 级还差'+(3500-total)+'点三围';
          }
         }
         
         this.setData({
-
-          showActiveModule:true,
+          showIntro:showIntro,
+          showIntroText:element.des,
+          showActiveModule:pKModuleShow,
           resultStr:result
         })
         break;
@@ -384,54 +430,54 @@ Page({
         return;
     }
     var result = '';
-    for (let index = 0; index < this.data.bingZhongList.length; index++) {
-      const element = this.data.bingZhongList[index];
-      if (element.select) {
-        console.log(element);
-        var gongji = this.data.gongjiInput-element.repaireGong;
-        var xue = this.data.xueInput-element.repaireXue;
-        var fangyu = this.data.fangyuInput - element.repaireFangyu;
-        let total = Number(gongji)+Number(xue)+Number(fangyu);
-        for (let j = 0; j < this.data.pkBingZhongList.length; j++) {
-          const pkElement = this.data.pkBingZhongList[j];
-          if (pkElement.select) {
-            var pkGongji = this.data.pkGoneInput-pkElement.repaireGong;
-            var pkFangyu = this.data.pkFangInput - pkElement.repaireFangyu;
-            var pkXue = this.data.pkXueInput-pkElement.repaireXue;
-            let pkTotal = Number(pkGongji)+Number(pkFangyu)+Number(pkXue);
-            if (total>pkTotal) {
-              result = result + '\nPK结果：主公胜\n主公对齐后三围高出对方'+Number(total-pkTotal) +'点\n';
-              result = result + '主公对齐后的三围为:\n攻击：';
-              result = result+gongji+'  防御：'+fangyu +'  生命：'+xue+'\n总三围：'+total;
-              result = result + '\n对方对齐后的三围为:\n攻击：';
-              result = result+pkGongji+'  防御：'+pkFangyu +'  生命：'+pkXue+'\n总三围：'+pkTotal;
-              if (xue<pkXue && fangyu<pkFangyu) {
-                result = result + '\n(主公的血防略逊于对方，可以着重加强一下哦，血防也是很重要呢)'
-              }
-            }else if(total == pkTotal){
-              result = result +'\nPK结果：打平了\n太巧了。主公和对方的三围竟是相同的\n';
-              result = result +'主公对齐后的三围为:\n攻击：';
-              result = result+gongji+'  防御：'+fangyu +'  生命：'+xue+'\n总三围：'+total;
-              result = result + '\n对方对齐后的三围为:\n攻击：';
-              result = result+pkGongji+'  防御：'+pkFangyu +'  生命：'+pkXue+'\n总三围：'+pkTotal;
-            }else{
-              result = result +'\nPK结果：对方胜\n主公加油变强呀\n';
-              result = result +'主公对齐后的三围为:\n攻击：';
-              result = result+gongji+'  防御：'+fangyu +'  生命：'+xue+'\n总三围：'+total;
-              result = result + '\n对方对齐后的三围为:\n攻击：';
-              result = result+pkGongji+'  防御：'+pkFangyu +'  生命：'+pkXue+'\n总三围：'+pkTotal;
-            }
-            result = result +'\n组队三围后续版本增加，请各位主公稍安勿躁'
-          }
+    let total = Number(this.data.shareGone)+Number(this.data.shareFang)+Number(this.data.shareXue);
+    for (let j = 0; j < this.data.pkBingZhongList.length; j++) {
+      const pkElement = this.data.pkBingZhongList[j];
+      if (pkElement.select) {
+        var pkGongji = this.data.pkGoneInput-pkElement.repaireGong+Number(this.data.zuduipkGoneInput);
+        var pkFangyu = this.data.pkFangInput - pkElement.repaireFangyu+Number(this.data.zuduipkFangInput);
+        var pkXue = this.data.pkXueInput-pkElement.repaireXue+Number(this.data.zuduipkXueInput);
+        let pkTotal = Number(pkGongji)+Number(pkFangyu)+Number(pkXue);
+        if (total>pkTotal) {
+          result = result + '\nPK结果：主公胜\n主公对齐后三围高出对方'+Number(total-pkTotal) +'点\n';
+          result = result + '主公对齐后的三围为:\n攻击：';
+          result = result+this.data.shareGone+'  防御：'+this.data.shareFang +'  生命：'+this.data.shareXue+'\n总三围：'+total;
+          result = result + '\n对方对齐后的三围为:\n攻击：';
+          result = result+pkGongji+'  防御：'+pkFangyu +'  生命：'+pkXue+'\n总三围：'+pkTotal;
+        }else if(total == pkTotal){
+          result = result +'\nPK结果：打平了\n太巧了。主公和对方的三围竟是相同的\n';
+          result = result +'主公对齐后的三围为:\n攻击：';
+          result = result+this.data.shareGone+'  防御：'+this.data.shareFang +'  生命：'+this.data.shareXue+'\n总三围：'+total;
+          result = result + '\n对方对齐后的三围为:\n攻击：';
+          result = result+pkGongji+'  防御：'+pkFangyu +'  生命：'+pkXue+'\n总三围：'+pkTotal;
+        }else{
+          result = result +'\nPK结果：对方胜\n主公加油变强呀\n';
+          result = result +'主公对齐后的三围为:\n攻击：';
+          result = result+this.data.shareGone+'  防御：'+this.data.shareFang +'  生命：'+this.data.shareXue+'\n总三围：'+total;
+          result = result + '\n对方对齐后的三围为:\n攻击：';
+          result = result+pkGongji+'  防御：'+pkFangyu +'  生命：'+pkXue+'\n总三围：'+pkTotal;
         }
-        }
+        result = result +'\n组队三围后续版本增加，请各位主公稍安勿躁'
       }
+    }
     this.setData({
       showPKCard:false,
       pkGoneInput:0,
       pkXueInput:0,
       pkFangInput:0,
+      showIntro:false,
       resultStr:result
+    })
+  },
+  introAction:function(){
+    this.setData({
+      showIntroCard:true
+    })
+  },
+  introCancel: function () {
+    var that = this
+    that.setData({
+      showIntroCard:false
     })
   },
   /**

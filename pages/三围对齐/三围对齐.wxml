@@ -27,14 +27,34 @@
 			<text class="title">血</text>
 		</view>
 	</view>
+  <view class="inputContainer">
+		<view class="titleContainer">
+			<text class="title">组队三围</text>
+		</view>
+		<input class="unitInput" placeholder="攻" type="number" bindinput="zuduigongjiInput"></input>
+		<view class="unitTitle">
+			<text class="title">攻</text>
+		</view>
+		<input class="unitInput" placeholder="防" type="number" bindinput="zuduifangyuInput"></input>
+		<view class="unitTitle">
+			<text class="title">防</text>
+		</view>
+		<input class="unitInput" placeholder="血" type="number" bindinput="zuduixueInput"></input>
+		<view class="unitTitle">
+			<text class="title">血</text>
+		</view>
+	</view>
 	<text class="result">{{resultStr}}</text>
+  <view class="intro" bindtap="introAction" wx:if='{{showIntro}}'>
+     <text class="introText">点击查看对齐说明</text>
+  </view>
   <view wx:if='{{showActiveModule}}' class="activeButtonContainer">
     <view class="pkButtonContainer" bindtap="pkAction">
-    <text class="activeTitle">我要PK</text>
+    <text class="activeTitle">PK其他兵种</text>
     </view>
     <view class="shareButtonContainer">
-    <button wx:if="{{openTypeShare}}" class="shareButtonContainer" open-type="share" style="width:100%">晒一下</button>
-    <button wx:if="{{!openTypeShare}}" class="shareButtonContainer" open-type="getUserInfo" style="width:100%" bindgetuserinfo="bindGetUserInfo">晒一下</button>
+    <button wx:if="{{openTypeShare}}" class="shareButtonContainer" open-type="share" style="width:100%">发起我的PK</button>
+    <button wx:if="{{!openTypeShare}}" class="shareButtonContainer" open-type="getUserInfo" style="width:100%" bindgetuserinfo="bindGetUserInfo">发起我的PK</button>
     </view>
   </view>
 	<button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
@@ -63,6 +83,14 @@
                 <input class="pkUnitInput" placeholder="防" cursor-spacing="50" bindinput="pkFangInput" type="number"></input>
                 <input class="pkUnitInput" placeholder="血" cursor-spacing="50" bindinput="pkXueInput" type="number"></input>
                </view>
+               <view class="jixianContainer">
+                <text>组队三围(攻击/防御/生命)</text>
+               </view>
+               <view class="pkContainer">
+                <input class="pkUnitInput" placeholder="攻" cursor-spacing="50" bindinput="zuduipkGoneInput" type="number"></input>
+                <input class="pkUnitInput" placeholder="防" cursor-spacing="50" bindinput="zuduipkFangInput" type="number"></input>
+                <input class="pkUnitInput" placeholder="血" cursor-spacing="50" bindinput="zuduipkXueInput" type="number"></input>
+               </view>
             </view>
             <view class='toast-button'>
                 <view class='button1'>
@@ -70,6 +98,28 @@
                 </view>
                 <view class='button2'>
                     <button bindtap='confirmAcceptance'>确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+  </block>
+
+  <block wx:if="{{showIntroCard}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>对齐说明</text>
+            </view>
+            <view class='toast-main'>
+              <text class="introCard">{{showIntroText}}</text>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='introCancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button bindtap='introCancel'>确定</button>
                 </view>
             </view>
         </view>

@@ -70,8 +70,8 @@ page {
 .result{
   margin-left: 20rpx;
   margin-right: 20rpx;
-  margin-top: 20rpx;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 2px;
   font-size: 15px;
 }
 .jixianContainerOrigin{
@@ -116,7 +116,7 @@ page {
   height: 40px;
   border: 1rpx solid white;
   background-color: #fc6060;
-  width: 30%;
+  width: 45%;
   color: white;
   border-radius: 20px;
 }
@@ -124,7 +124,7 @@ page {
   height: 40px;
   border: 1rpx solid white;
   background-color: #fc6060;
-  width: 30%;
+  width: 45%;
   color: white;
   border-radius: 20px;
 }
@@ -156,7 +156,7 @@ page {
   position: absolute;
   width: 70%;
   margin-left: 15%;
-  margin-top: 25%;
+  margin-top: 15%;
 }
 
 .toast-title {
@@ -256,4 +256,19 @@ page {
 .pkUnitInput{
   width: 30%;
   line-height: 30px;
+}
+.intro{
+  height: 20px;
+  width: 50%;
+  margin: 3px;
+}
+.introText{
+  line-height: 20px;
+  color: #fc6060;
+  margin-left: 20rpx;
+}
+.introCard{
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: left;
 }
