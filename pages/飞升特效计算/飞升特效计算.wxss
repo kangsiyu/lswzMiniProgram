@@ -1,0 +1,12 @@
+/* pages/飞升特效计算/飞升特效计算.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.tab_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}

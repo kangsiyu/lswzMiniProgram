@@ -17,7 +17,7 @@
 		</view>
 
 		<view class='nav-view-two'>
-			<navigator url='../imageBrower/imageBrower?author=莫璇&url=http://123.206.91.105/1.png' class='nav_one'>
+			<navigator url='../imageBrower/imageBrower?author=莫璇&url=cloud://lswztool-debug-ngiig.6c73-lswztool-debug-ngiig-1302666573/feisheng.png' class='nav_one'>
 				<text class='nav_text'>飞升花费</text>
 				<view class='icon-arrow'></view>
 			</navigator>
@@ -62,6 +62,18 @@
 				<text class='nav_text'>三围对齐</text>
 				<view class='icon-arrow'></view>
 			</navigator> -->
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../鸿蒙爆兵/鸿蒙爆兵' class='nav_one'>
+				<text class='nav_text'>鸿蒙爆兵</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../飞升特效计算/飞升特效计算' class='nav_one'>
+				<text class='nav_text'>飞升特效计算</text>
+				<view class='icon-arrow'></view>
+			</navigator>
 		</view>
 </view>
 

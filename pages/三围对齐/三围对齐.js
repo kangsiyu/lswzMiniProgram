@@ -325,7 +325,6 @@ Page({
     console.log( this.data.bingZhongList[index]);
   },
   calculateAction:function(){
-    
     if (this.data.gongjiInput==0||
       this.data.xueInput == 0 ||
       this.data.fangyuInput == 0) {

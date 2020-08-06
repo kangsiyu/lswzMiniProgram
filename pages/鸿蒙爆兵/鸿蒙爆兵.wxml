@@ -1,0 +1,38 @@
+<!--pages/鸿蒙爆兵/鸿蒙爆兵.wxml-->
+<view class="tab_container">
+	<view class="bingzhongContainer">
+		<view class="titleContainer">
+			<text class="titleBingzhong">兵种选择</text>
+		</view>
+		<view class="jixianCheckBoxOrigin">
+			<view class="jixianCheckOrigin {{item.select?'selectedCheck':''}}" wx:for="{{bingZhongList}}" wx:key="item" bindtap="jixianCheckTap" id="{{item.id}}">
+				<text class="bingName">{{item.title}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="inputContainer">
+		<view class="titleContainer">
+			<text class="title">鸿蒙气</text>
+		</view>
+		<input class="input" placeholder="输入鸿蒙气" type="number" bindinput="timeAllInput" auto-focus></input>
+	</view>
+	<view class="inputContainer">
+		<view class="titleContainer">
+			<text class="title">1000个兵时间</text>
+		</view>
+		<input class="unitInput" placeholder="小时" type="number" bindinput="hoursInput"></input>
+		<view class="unitTitle">
+			<text class="title">时</text>
+		</view>
+		<input class="unitInput" placeholder="分钟" type="number" bindinput="minInput"></input>
+		<view class="unitTitle">
+			<text class="title">分</text>
+		</view>
+		<input class="unitInput" placeholder="秒" type="number" bindinput="secondInput"></input>
+		<view class="unitTitle">
+			<text class="title">秒</text>
+		</view>
+	</view>
+<text class="result">{{resultStr}}</text>
+<button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+</view>
