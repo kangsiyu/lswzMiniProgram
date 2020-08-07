@@ -98,268 +98,267 @@ Page({
         },
        ]
       },
-      {
-        title:'天狼星',
-        main:[
-         {
-           title:'奎宿',
-           level:20,
-           tongpaiUnit:62,
-           zipaiUnit:0,
-           huangpaiUnit:0,
-           timeUnit:12.5
-         },
-         {
-          title:'娄宿',
-          level:20,
-          tongpaiUnit:75,
-          zipaiUnit:0,
-          huangpaiUnit:0,
-          timeUnit:15
-        },
-        {
-          title:'未宿',
-          level:20,
-          tongpaiUnit:87,
-          zipaiUnit:0,
-          huangpaiUnit:0,
-          timeUnit:17.5
-        },
-        {
-          title:'昂宿',
-          level:20,
-          tongpaiUnit:100,
-          zipaiUnit:0,
-          huangpaiUnit:0,
-          timeUnit:20
-        },
-        {
-          title:'毕宿',
-          level:20,
-          tongpaiUnit:112,
-          zipaiUnit:0,
-          huangpaiUnit:0,
-          timeUnit:22.5
-        },
-        {
-          title:'觜宿',
-          level:20,
-          tongpaiUnit:125,
-          zipaiUnit:0,
-          huangpaiUnit:0,
-          timeUnit:25
-        },
-        {
-          title:'参宿',
-          level:20,
-          tongpaiUnit:137,
-          zipaiUnit:0,
-          huangpaiUnit:0,
-          timeUnit:27.5
-        },
-        {
-          title:'里宿',
-          level:20,
-          tongpaiUnit:150,
-          zipaiUnit:0,
-          huangpaiUnit:0,
-          timeUnit:30
-        },
-        ],
-        chuanshuo:[
-         {
-           title:'离宿',
-           level:20,
-           tongpaiUnit:0,
-           zipaiUnit:0,
-           huangpaiUnit:137,
-           timeUnit:55
-         },
-         {
-           title:'归宿',
-           level:20,
-           tongpaiUnit:0,
-           zipaiUnit:0,
-           huangpaiUnit:150,
-           timeUnit:60
-         },
-        ]
-       },
-       {
-        title:'凤舞星',
-        main:[
-         {
-           title:'心宿',
-           level:20,
-           tongpaiUnit:137,
-           zipaiUnit:34,
-           huangpaiUnit:0,
-           timeUnit:27.5
-         },
-         {
-          title:'鬼宿',
-          level:20,
-          tongpaiUnit:150,
-          zipaiUnit:37,
-          huangpaiUnit:0,
-          timeUnit:30
-        },
-        {
-          title:'柳宿',
-          level:20,
-          tongpaiUnit:170,
-          zipaiUnit:42,
-          huangpaiUnit:0,
-          timeUnit:34
-        },
-        {
-          title:'星宿',
-          level:20,
-          tongpaiUnit:190,
-          zipaiUnit:47,
-          huangpaiUnit:0,
-          timeUnit:38
-        },
-        {
-          title:'张宿',
-          level:20,
-          tongpaiUnit:210,
-          zipaiUnit:52,
-          huangpaiUnit:0,
-          timeUnit:42
-        },
-        {
-          title:'翼宿',
-          level:20,
-          tongpaiUnit:230,
-          zipaiUnit:57,
-          huangpaiUnit:0,
-          timeUnit:46
-        },
-        {
-          title:'轸宿',
-          level:20,
-          tongpaiUnit:250,
-          zipaiUnit:62,
-          huangpaiUnit:0,
-          timeUnit:50
-        },
-        {
-          title:'辘宿',
-          level:20,
-          tongpaiUnit:270,
-          zipaiUnit:67,
-          huangpaiUnit:0,
-          timeUnit:54
-        },
-        ],
-        chuanshuo:[
-         {
-           title:'木宿',
-           level:20,
-           tongpaiUnit:0,
-           zipaiUnit:0,
-           huangpaiUnit:210,
-           timeUnit:84
-         },
-         {
-           title:'乾宿',
-           level:20,
-           tongpaiUnit:0,
-           zipaiUnit:0,
-           huangpaiUnit:250,
-           timeUnit:100
-         },
-        ]
-       },
-       {
-        title:'飞龙星',
-        main:[
-         {
-           title:'角宿',
-           level:20,
-           tongpaiUnit:250,
-           zipaiUnit:62,
-           huangpaiUnit:0,
-           timeUnit:50
-         },
-         {
-          title:'亢宿',
-          level:20,
-          tongpaiUnit:270,
-          zipaiUnit:67,
-          huangpaiUnit:0,
-          timeUnit:54
-        },
-        {
-          title:'氐宿',
-          level:20,
-          tongpaiUnit:290,
-          zipaiUnit:72,
-          huangpaiUnit:0,
-          timeUnit:58
-        },
-        {
-          title:'房宿',
-          level:20,
-          tongpaiUnit:310,
-          zipaiUnit:77,
-          huangpaiUnit:0,
-          timeUnit:62
-        },
-        {
-          title:'挪宿',
-          level:20,
-          tongpaiUnit:337,
-          zipaiUnit:84,
-          huangpaiUnit:0,
-          timeUnit:67.5
-        },
-        {
-          title:'尾宿',
-          level:20,
-          tongpaiUnit:365,
-          zipaiUnit:91,
-          huangpaiUnit:0,
-          timeUnit:73
-        },
-        {
-          title:'簸宿',
-          level:20,
-          tongpaiUnit:392,
-          zipaiUnit:98,
-          huangpaiUnit:0,
-          timeUnit:78.5
-        },
-        {
-          title:'牙宿',
-          level:20,
-          tongpaiUnit:420,
-          zipaiUnit:105,
-          huangpaiUnit:0,
-          timeUnit:84
-        },
-        ],
-        chuanshuo:[
-         {
-           title:'周宿',
-           level:20,
-           tongpaiUnit:0,
-           zipaiUnit:0,
-           huangpaiUnit:392,
-           timeUnit:157
-         },
-         {
-           title:'盘宿',
-           level:20,
-           tongpaiUnit:0,
-           zipaiUnit:0,
-           huangpaiUnit:420,
-           timeUnit:170
-         },
-        ]
-       },
-      
+      // {
+      //   title:'天狼星',
+      //   main:[
+      //    {
+      //      title:'奎宿',
+      //      level:20,
+      //      tongpaiUnit:62,
+      //      zipaiUnit:0,
+      //      huangpaiUnit:0,
+      //      timeUnit:12.5
+      //    },
+      //    {
+      //     title:'娄宿',
+      //     level:20,
+      //     tongpaiUnit:75,
+      //     zipaiUnit:0,
+      //     huangpaiUnit:0,
+      //     timeUnit:15
+      //   },
+      //   {
+      //     title:'未宿',
+      //     level:20,
+      //     tongpaiUnit:87,
+      //     zipaiUnit:0,
+      //     huangpaiUnit:0,
+      //     timeUnit:17.5
+      //   },
+      //   {
+      //     title:'昂宿',
+      //     level:20,
+      //     tongpaiUnit:100,
+      //     zipaiUnit:0,
+      //     huangpaiUnit:0,
+      //     timeUnit:20
+      //   },
+      //   {
+      //     title:'毕宿',
+      //     level:20,
+      //     tongpaiUnit:112,
+      //     zipaiUnit:0,
+      //     huangpaiUnit:0,
+      //     timeUnit:22.5
+      //   },
+      //   {
+      //     title:'觜宿',
+      //     level:20,
+      //     tongpaiUnit:125,
+      //     zipaiUnit:0,
+      //     huangpaiUnit:0,
+      //     timeUnit:25
+      //   },
+      //   {
+      //     title:'参宿',
+      //     level:20,
+      //     tongpaiUnit:137,
+      //     zipaiUnit:0,
+      //     huangpaiUnit:0,
+      //     timeUnit:27.5
+      //   },
+      //   {
+      //     title:'里宿',
+      //     level:20,
+      //     tongpaiUnit:150,
+      //     zipaiUnit:0,
+      //     huangpaiUnit:0,
+      //     timeUnit:30
+      //   },
+      //   ],
+      //   chuanshuo:[
+      //    {
+      //      title:'离宿',
+      //      level:20,
+      //      tongpaiUnit:0,
+      //      zipaiUnit:0,
+      //      huangpaiUnit:137,
+      //      timeUnit:55
+      //    },
+      //    {
+      //      title:'归宿',
+      //      level:20,
+      //      tongpaiUnit:0,
+      //      zipaiUnit:0,
+      //      huangpaiUnit:150,
+      //      timeUnit:60
+      //    },
+      //   ]
+      //  },
+      //  {
+      //   title:'凤舞星',
+      //   main:[
+      //    {
+      //      title:'心宿',
+      //      level:20,
+      //      tongpaiUnit:137,
+      //      zipaiUnit:34,
+      //      huangpaiUnit:0,
+      //      timeUnit:27.5
+      //    },
+      //    {
+      //     title:'鬼宿',
+      //     level:20,
+      //     tongpaiUnit:150,
+      //     zipaiUnit:37,
+      //     huangpaiUnit:0,
+      //     timeUnit:30
+      //   },
+      //   {
+      //     title:'柳宿',
+      //     level:20,
+      //     tongpaiUnit:170,
+      //     zipaiUnit:42,
+      //     huangpaiUnit:0,
+      //     timeUnit:34
+      //   },
+      //   {
+      //     title:'星宿',
+      //     level:20,
+      //     tongpaiUnit:190,
+      //     zipaiUnit:47,
+      //     huangpaiUnit:0,
+      //     timeUnit:38
+      //   },
+      //   {
+      //     title:'张宿',
+      //     level:20,
+      //     tongpaiUnit:210,
+      //     zipaiUnit:52,
+      //     huangpaiUnit:0,
+      //     timeUnit:42
+      //   },
+      //   {
+      //     title:'翼宿',
+      //     level:20,
+      //     tongpaiUnit:230,
+      //     zipaiUnit:57,
+      //     huangpaiUnit:0,
+      //     timeUnit:46
+      //   },
+      //   {
+      //     title:'轸宿',
+      //     level:20,
+      //     tongpaiUnit:250,
+      //     zipaiUnit:62,
+      //     huangpaiUnit:0,
+      //     timeUnit:50
+      //   },
+      //   {
+      //     title:'辘宿',
+      //     level:20,
+      //     tongpaiUnit:270,
+      //     zipaiUnit:67,
+      //     huangpaiUnit:0,
+      //     timeUnit:54
+      //   },
+      //   ],
+      //   chuanshuo:[
+      //    {
+      //      title:'木宿',
+      //      level:20,
+      //      tongpaiUnit:0,
+      //      zipaiUnit:0,
+      //      huangpaiUnit:210,
+      //      timeUnit:84
+      //    },
+      //    {
+      //      title:'乾宿',
+      //      level:20,
+      //      tongpaiUnit:0,
+      //      zipaiUnit:0,
+      //      huangpaiUnit:250,
+      //      timeUnit:100
+      //    },
+      //   ]
+      //  },
+      //  {
+      //   title:'飞龙星',
+      //   main:[
+      //    {
+      //      title:'角宿',
+      //      level:20,
+      //      tongpaiUnit:250,
+      //      zipaiUnit:62,
+      //      huangpaiUnit:0,
+      //      timeUnit:50
+      //    },
+      //    {
+      //     title:'亢宿',
+      //     level:20,
+      //     tongpaiUnit:270,
+      //     zipaiUnit:67,
+      //     huangpaiUnit:0,
+      //     timeUnit:54
+      //   },
+      //   {
+      //     title:'氐宿',
+      //     level:20,
+      //     tongpaiUnit:290,
+      //     zipaiUnit:72,
+      //     huangpaiUnit:0,
+      //     timeUnit:58
+      //   },
+      //   {
+      //     title:'房宿',
+      //     level:20,
+      //     tongpaiUnit:310,
+      //     zipaiUnit:77,
+      //     huangpaiUnit:0,
+      //     timeUnit:62
+      //   },
+      //   {
+      //     title:'挪宿',
+      //     level:20,
+      //     tongpaiUnit:337,
+      //     zipaiUnit:84,
+      //     huangpaiUnit:0,
+      //     timeUnit:67.5
+      //   },
+      //   {
+      //     title:'尾宿',
+      //     level:20,
+      //     tongpaiUnit:365,
+      //     zipaiUnit:91,
+      //     huangpaiUnit:0,
+      //     timeUnit:73
+      //   },
+      //   {
+      //     title:'簸宿',
+      //     level:20,
+      //     tongpaiUnit:392,
+      //     zipaiUnit:98,
+      //     huangpaiUnit:0,
+      //     timeUnit:78.5
+      //   },
+      //   {
+      //     title:'牙宿',
+      //     level:20,
+      //     tongpaiUnit:420,
+      //     zipaiUnit:105,
+      //     huangpaiUnit:0,
+      //     timeUnit:84
+      //   },
+      //   ],
+      //   chuanshuo:[
+      //    {
+      //      title:'周宿',
+      //      level:20,
+      //      tongpaiUnit:0,
+      //      zipaiUnit:0,
+      //      huangpaiUnit:392,
+      //      timeUnit:157
+      //    },
+      //    {
+      //      title:'盘宿',
+      //      level:20,
+      //      tongpaiUnit:0,
+      //      zipaiUnit:0,
+      //      huangpaiUnit:420,
+      //      timeUnit:170
+      //    },
+      //   ]
+      //  },
     ]
   },
 

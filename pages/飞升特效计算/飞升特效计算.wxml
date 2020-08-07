@@ -1,4 +1,14 @@
 <!--pages/飞升特效计算/飞升特效计算.wxml-->
-<scroll-view class="tab_container">
-  <view wx:for="{{userData}}" wx:key="item"></view>
+<scroll-view class="tab_container" enable-flex="true" scroll-y="true">
+  <view class="mainContainer" wx:for="{{userData}}" wx:key="item">
+  <view class="starTitleContainer">
+  <text class="title">{{item.title}}</text>
+  <view class="starContainer">
+    <view class="starUnit" wx:for='{{item.main}}'>
+    </view>
+    <view class="starUnitChuanShuo" wx:for='{{item.chuanshuo}}'>
+    </view>
+  </view>
+  </view>
+  </view>
 </scroll-view>
