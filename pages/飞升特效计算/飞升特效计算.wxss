@@ -5,29 +5,26 @@ page{
 }
 .tab_container {
   width: 100%;
-  height: 100%;
+  height: 1160px;
   display: flex;
   flex-direction: column;
 }
 .mainContainer{
-  height: 180px;
-  background-color: aqua;
+  height: 190px;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 .starTitleContainer{
   width: 100%;
-  background-color: yellow;
   text-align: center;
 }
 .title{
   text-align: center;
-  line-height: 20px;
+  line-height: 30px;
 }
 .starContainer{
   height: 160px;
-  background-color: violet;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -35,10 +32,54 @@ page{
 .starUnit{
   width: 20%;
   height: 80px;
-  background-color: tomato;
 }
 .starUnitChuanShuo{
   width: 20%;
   height: 80px;
-  background-color: blue;
+}
+.starUnitTitleContainer{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+.starUnitTitle{
+  line-height: 40px;
+}
+.inputContainer{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  justify-items: center;
+  align-items: center;
+}
+.input{
+  line-height: 40px;
+  height: 40px;
+}
+.buttonContainer{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+}
+.button{
+  display: block;
+  width: 50%;
+  margin-left: 25%;
+  background-color: #fc6060;
+  border-radius: 20px;
+  margin-top: 10px;
+  height: 40px;
+  color: white;
+  line-height: 40px;
+  text-align: center;
+}
+.result{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
 }
