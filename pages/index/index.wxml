@@ -2,6 +2,12 @@
 <view class='tab_container'>
 	<view class='tab_header'>
 	</view>
+	<view class='nav-view-one' wx:if='{{needActiveEntrance}}'>
+			<navigator url='../运营活动信息落地页/运营活动信息落地页' class='nav_one'>
+				<text class='nav_text'>{{entranceTitle}}</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
 	<view class='nav-view-one'>
 			<navigator url='../baobing/baobing' class='nav_one'>
 				<text class='nav_text'>我要爆兵</text>
@@ -58,10 +64,6 @@
 				<text class='nav_text'>三围对齐</text>
 				<view class='icon-arrow'></view>
 			</navigator>
-			<!-- <navigator url='../三围分享/三围分享?shareGone=1500&shareFang=1100&shareXue=900&bingZhong=枪兵&nickName=斯雨&head=https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epaL7kvaicIXwTXO6w1mDZC4awhKNqR6ZNB6YFBGKiaF6ZAGjuvXdjXQYvFibNHxpTebmUgpa4BoBmaA/132' class='nav_one'>
-				<text class='nav_text'>三围对齐</text>
-				<view class='icon-arrow'></view>
-			</navigator> -->
 		</view>
 		<view class='nav-view-two'>
 			<navigator url='../鸿蒙爆兵/鸿蒙爆兵' class='nav_one'>

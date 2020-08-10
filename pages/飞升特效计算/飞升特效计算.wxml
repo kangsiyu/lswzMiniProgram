@@ -1,22 +1,22 @@
 <!--pages/飞升特效计算/飞升特效计算.wxml-->
-<scroll-view class="tab_container" enable-flex="true" scroll-y="true">
-	<view class="mainContainer" wx:for="{{userData}}" wx:key="item" wx:for-item="starList">
-		<view class="starTitleContainer">
-			<text class="title">{{starList.title}}</text>
-			<view class="starContainer">
-				<view class="starUnit" wx:for='{{starList.main}}' wx:key='mainList' wx:for-index="idx">
-					<view class="starUnitTitleContainer">
-						<text class="starUnitTitle">{{item.title}}</text>
-					</view>
-					<view class="inputContainer">
-						<input class="input" type="number" placeholder="等级" value="{{item.level}}" bindinput="inputLevel" data-name="{{starList.index}}-{{idx}}"></input>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view>
-  <text class="result">{{resultStr}}</text>
-	<view class="buttonContainer" bindtap="calAction">
-      <text class="button">保存数据并计算</text>
-	</view>
+<scroll-view class="tab_container" enable-flex="true" scroll-y="true"> 
+    <view class="mainContainer" wx:for="{{userData}}" wx:key="item" wx:for-item="starList"> 
+        <view class="starTitleContainer"> 
+            <text class="title">{{starList.title}}</text> 
+            <view class="starContainer"> 
+                <view class="starUnit" wx:for='{{starList.main}}' wx:key='mainList' wx:for-index="idx"> 
+                    <view class="starUnitTitleContainer"> 
+                        <text class="starUnitTitle">{{item.title}}</text> 
+                    </view> 
+                    <view class="inputContainer"> 
+                        <input class="input" type="number" placeholder="等级" value="{{item.level}}" bindinput="inputLevel" data-name="{{starList.index}}-{{idx}}"></input> 
+                    </view> 
+                </view> 
+            </view> 
+        </view> 
+    </view> 
+  <text class="result">{{resultStr}}</text> 
+    <view class="buttonContainer" bindtap="calAction"> 
+      <text class="button">保存数据并计算</text> 
+    </view> 
 </scroll-view>
