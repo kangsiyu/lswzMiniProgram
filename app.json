@@ -15,7 +15,8 @@
     "pages/三围对齐/三围对齐",
     "pages/三围分享/三围分享",
     "pages/鸿蒙爆兵/鸿蒙爆兵",
-    "pages/飞升特效计算/飞升特效计算"
+    "pages/飞升特效计算/飞升特效计算",
+    "pages/乐理活动助手/乐理活动助手"
   ],
   "window": {
     "backgroundTextStyle": "light",
