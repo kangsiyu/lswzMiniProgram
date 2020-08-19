@@ -1,14 +1,19 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var databaseUtil = require('../../utils/dataBaseUtil')
+const db = wx.cloud.database({
+  env: databaseUtil.getDataBaseEnv()
+})
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    sysWidth:0
+    sysWidth:0,
+    needActiveEntrance:false,
+    entranceTitle:''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -17,7 +22,20 @@ Page({
     })
   },
   onLoad: function () {
-    
+    var that = this;
+    db.collection('configInfo').get({
+      success:function(res){
+        if (res.data.length) {
+           const element = res.data[0];
+           if (element.needActiveEntrance) {
+              that.setData({
+                needActiveEntrance:element.needActiveEntrance,
+                entranceTitle:element.entranceTitle
+              })
+           }
+        }
+      }
+    })
   },
   baobing:function(){
     wx.navigateTo({
