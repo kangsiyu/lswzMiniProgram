@@ -17,6 +17,7 @@ Page({
     imageShow:false,
     imageFile:'',
     adOnceShow:false,
+    buttonTitle:'看实时截图'
   },
 
   /**
@@ -34,7 +35,8 @@ Page({
                 resultDes:element.des,
                 resultTips:element.tips,
                 imageShow:element.imageFile.length>0,
-                imageFile:element.imageFile
+                imageFile:element.imageFile,
+                buttonTitle:element.buttonTitle
               })
            }
         }

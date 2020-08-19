@@ -7,6 +7,6 @@
 <ad unit-id="adunit-72c97fd2ed489611" ad-intervals="30"></ad>
 </view>
 <view wx:if='{{imageShow}}' class="buttonContainer" bindtap="calAction"> 
-      <text class="button">看实时截图</text> 
+      <text class="button">{{buttonTitle}}</text> 
 </view> 
 </view>

@@ -1,1 +1,65 @@
 /* pages/乐理活动助手/乐理活动助手.wxss */
+.yueqiContainer{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.yueqiWrapper{
+  width: 25%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.imageContainer{
+  width: 100%;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.imageName{
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 100%;
+}
+.image{
+  width: 50px;
+  height: 70px;
+}
+.tips{
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.inputContainer{
+  height: 120px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.inputWrapper{
+  width: 24%;
+  height: 30px;
+  border: 1px solid #f0f0f0;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+.input{
+  line-height: 30px;
+  height: 30px;
+}
+.bottom{
+  width: 100%;
+  bottom: 0rpx;
+  height: constant(safe-area-inset-bottom);
+  position: fixed;
+}

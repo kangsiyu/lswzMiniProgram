@@ -13,7 +13,9 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     sysWidth:0,
     needActiveEntrance:false,
-    entranceTitle:''
+    entranceTitle:'',
+    needYueLiEntrance:false,
+    imageBrowers:[]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -27,11 +29,22 @@ Page({
       success:function(res){
         if (res.data.length) {
            const element = res.data[0];
+           console.log(element)
            if (element.needActiveEntrance) {
               that.setData({
                 needActiveEntrance:element.needActiveEntrance,
                 entranceTitle:element.entranceTitle
               })
+           }
+           if (element.needYueLiEntrance) {
+             that.setData({
+               needYueLiEntrance:element.needYueLiEntrance
+             })
+           }
+           if (element.imageBrowers.length) {
+             that.setData({
+               imageBrowers:element.imageBrowers
+             })
            }
         }
       }

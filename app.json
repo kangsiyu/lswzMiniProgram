@@ -16,11 +16,8 @@
     "pages/三围分享/三围分享",
     "pages/鸿蒙爆兵/鸿蒙爆兵",
     "pages/飞升特效计算/飞升特效计算",
-<<<<<<< HEAD
-    "pages/乐理活动助手/乐理活动助手"
-=======
+    "pages/乐理活动助手/乐理活动助手",
     "pages/运营活动信息落地页/运营活动信息落地页"
->>>>>>> 9366e5a9a3e93dd23cb29e6d579d91511cf50bac
   ],
   "window": {
     "backgroundTextStyle": "light",

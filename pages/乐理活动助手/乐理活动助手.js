@@ -1,18 +1,105 @@
 // pages/乐理活动助手/乐理活动助手.js
+const app = getApp()
+var databaseUtil = require('../../utils/dataBaseUtil')
+const db = wx.cloud.database({
+  env: databaseUtil.getDataBaseEnv()
+})
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    yueqiInfo:[],
+    remainColor:['#3399ff','#3bd863','#ec6912','#ece812','#12eccf','#470099','#ec1236','#da12ec'],
+    inputInfo:[
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    db.collection('yueliInfo').get({
+      success:function(res){
+        if (res.data.length) {
+           const element = res.data[0];
+           console.log(element)
+           if (element.yueqiInfo) {
+              that.setData({
+                yueqiInfo:element.yueqiInfo
+              })
+              console.log(that.data.yueqiInfo)
+           }
+        }
+      }
+    })
   },
 
   /**
@@ -62,5 +149,35 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  inputNumber:function(e){
+    var index = e.currentTarget.dataset.name;
+    console.log(index);
+    if (Number(index)<this.data.inputInfo.length) {
+      const element = this.data.inputInfo[index];
+      element.inputText = e.detail.value;
+      let isHaveColor = false;
+      for (let i = 0; i < this.data.inputInfo.length; i++) {
+        const elementList = this.data.inputInfo[i];
+        if (i != index && elementList.inputText == element.inputText) {
+           if (elementList.color != '#000000') {
+             element.color = elementList.color;
+             isHaveColor = true;
+             this.setData({
+              inputInfo:this.data.inputInfo
+            })
+             break;
+           }
+        }
+      }
+      if (!isHaveColor && this.data.remainColor.length>0 &&element.color=='#ffffff') {
+        const color = this.data.remainColor.pop();
+        element.color = color;
+        console.log(this.data.inputInfo)
+        this.setData({
+          inputInfo:this.data.inputInfo
+        })
+      }
+    }
   }
 })

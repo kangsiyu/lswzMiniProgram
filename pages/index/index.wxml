@@ -77,9 +77,15 @@
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
-		<view class='nav-view-two'>
+		<view class='nav-view-two' wx:if='{{needYueLiEntrance}}'>
 			<navigator url='../乐理活动助手/乐理活动助手' class='nav_one'>
 				<text class='nav_text'>乐理活动助手</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two' wx:for="{{imageBrowers}}" wx:key="item">
+			<navigator url='{{item.url}}' class='nav_one'>
+				<text class='nav_text'>{{item.title}}</text>
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
