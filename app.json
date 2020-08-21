@@ -17,7 +17,8 @@
     "pages/鸿蒙爆兵/鸿蒙爆兵",
     "pages/飞升特效计算/飞升特效计算",
     "pages/乐理活动助手/乐理活动助手",
-    "pages/运营活动信息落地页/运营活动信息落地页"
+    "pages/运营活动信息落地页/运营活动信息落地页",
+    "pages/联盟活动助手/联盟活动助手"
   ],
   "window": {
     "backgroundTextStyle": "light",

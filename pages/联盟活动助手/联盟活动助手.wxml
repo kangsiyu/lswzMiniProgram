@@ -1,0 +1,13 @@
+<!--pages/联盟活动助手/联盟活动助手.wxml-->
+<view class='tab_container'>
+	<view class='nav-view-one'>
+			<navigator url='../baobing/baobing' class='nav_one'>
+				<text class='nav_text'>我要爆兵</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+</view>
+
+<view class='bottom'>
+	<ad unit-id="adunit-07a1c74ca6acaed0" ad-intervals="30"></ad>
+</view>
