@@ -2,7 +2,7 @@
 <view class='tab_container'>
 <text class="resultTitle">{{resultStr}}</text>
 <text class="resultTitle">{{resultDes}}</text>
-<text class="resultTitle">{{resultTips}}</text>
+<text class="resultTip">{{resultTips}}</text>
 <view class='bottom'>
 <ad unit-id="adunit-72c97fd2ed489611" ad-intervals="30"></ad>
 </view>

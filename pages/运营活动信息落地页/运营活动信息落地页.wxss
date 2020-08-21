@@ -5,11 +5,18 @@
   margin-top: 20rpx;
   margin-bottom: 20px;
 }
+.resultTip{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 100px;
+}
 .bottom{
   width: 100%;
   bottom: 0rpx;
   height: constant(safe-area-inset-bottom);
   position: fixed;
+  
 }
 .tab_container {
   width: 100%;
@@ -25,6 +32,7 @@
   flex-direction: row;
   align-items: center;
   justify-items: center;
+  margin-bottom: 100px;
 }
 .button{
   display: block;

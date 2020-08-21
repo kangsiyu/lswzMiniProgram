@@ -29,7 +29,6 @@ Page({
       success:function(res){
         if (res.data.length) {
            const element = res.data[0];
-           console.log(element)
            if (element.needActiveEntrance) {
               that.setData({
                 needActiveEntrance:element.needActiveEntrance,
