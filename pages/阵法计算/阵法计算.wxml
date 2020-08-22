@@ -1,0 +1,18 @@
+<!--pages/阵法计算/阵法计算.wxml-->
+<view class='tab_container'>
+	<view class='nav-view-one'>
+			<navigator url='主阵法计算/主阵法计算' class='nav_one'>
+				<text class='nav_text'>主阵法计算</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+    <view class='nav-view-one'>
+			<navigator class='nav_one'>
+				<text class='nav_text'>辅助阵法敬请期待</text>
+			</navigator>
+		</view>
+</view>
+
+<view class='bottom'>
+	<ad unit-id="adunit-1700c0d079dadd80" ad-intervals="30"></ad>
+</view>
