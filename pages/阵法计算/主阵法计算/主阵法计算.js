@@ -354,7 +354,7 @@ Page({
     let totalpianzhang = 0;
     let totalxingpan = 0;
     let totalqijing = 0;
-    for (let index = current; index <= target; index++) {
+    for (let index = current+1; index <= target; index++) {
       const element = this.data.levelInfo[index];
       totalyuanbao = totalyuanbao+Number(element.yuanbao);
       totalpianzhang = totalpianzhang+Number(element.pianzhang);
