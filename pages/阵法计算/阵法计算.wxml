@@ -7,8 +7,9 @@
 			</navigator>
 		</view>
     <view class='nav-view-one'>
-			<navigator class='nav_one'>
-				<text class='nav_text'>辅助阵法敬请期待</text>
+			<navigator class='nav_one' url="辅助阵法计算/辅助阵法计算">
+				<text class='nav_text'>辅助阵法计算</text>
+				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
 </view>

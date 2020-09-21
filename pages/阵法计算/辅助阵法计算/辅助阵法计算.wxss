@@ -1,0 +1,78 @@
+/* pages/阵法计算/主阵法计算/主阵法计算.wxss */
+/* pages/注灵玉计算/注灵玉计算.wxss */
+page {
+  height: 100%;
+}
+
+.tab_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.inputContainer{
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid gainsboro;
+}
+.titleContainer{
+  width: 33%;
+  text-align: center;
+  background-color:#f0f0f0;
+  align-items: center;
+  justify-items: center;
+}
+.title{
+  display: block;
+  line-height: 50px;
+  text-align: center;
+}
+.input{
+  padding-left: 20px;
+}
+.calculate{
+  height: 40px;
+  border: 1rpx solid white;
+  background-color: #fc6060;
+  width: 100%;
+  color: white;
+  position: fixed;
+  bottom: 0rpx;
+  height: constant(safe-area-inset-bottom);
+}
+.result{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 60px;
+}
+.tips{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+.adShow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.adtitle{
+  margin-left: 20rpx;
+  width: 50%-20rpx;
+}
+.adButton{
+  width: 30%;
+  background-color: #fc6060;
+  margin-right: 20px;
+  height: 40px;
+  text-align: center;
+  border: 1rpx solid white;
+  border-radius: 20px;
+  line-height: 40px;
+  color: white;
+}

@@ -1,0 +1,17 @@
+<view class='tab_container'>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">当前阵法等级</text>
+      </view>
+      <input class="input" placeholder="输入当前主阵法等级" auto-focus type="number" bindinput="currentInput"></input>
+  </view>
+  <view class="inputContainer">
+      <view class="titleContainer">
+        <text class="title">目标阵法等级</text>
+      </view>
+      <input class="input" placeholder="输入目标主阵法等级" type="number" bindinput="targetInput"></input>
+  </view>
+  <text class="tips">辅助阵法不能超过主阵法哈</text>
+  <text class="result">{{resultStr}}</text>
+  <button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+</view>
