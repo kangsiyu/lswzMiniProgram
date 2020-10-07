@@ -163,70 +163,70 @@ Page({
         yuanbao:0,
         qijing:40,
         pianzhang:80,
-        xingpan:40
+        xingpan:20
        },
        {
         level:22,
         yuanbao:0,
         qijing:0,
         pianzhang:80,
-        xingpan:40
+        xingpan:20
        },
        {
         level:23,
         yuanbao:0,
         qijing:0,
         pianzhang:80,
-        xingpan:40
+        xingpan:20
        },
        {
         level:24,
         yuanbao:0,
         qijing:0,
         pianzhang:80,
-        xingpan:40
+        xingpan:20
        },
        {
         level:25,
         yuanbao:0,
         qijing:0,
         pianzhang:80,
-        xingpan:40
+        xingpan:20
        },
        {
         level:26,
         yuanbao:0,
         qijing:0,
-        pianzhang:160,
-        xingpan:80
+        pianzhang:240,
+        xingpan:40
        },
        {
         level:27,
         yuanbao:0,
         qijing:0,
-        pianzhang:160,
-        xingpan:80
+        pianzhang:240,
+        xingpan:40
        },
        {
         level:28,
         yuanbao:0,
         qijing:0,
-        pianzhang:160,
-        xingpan:80
+        pianzhang:240,
+        xingpan:40
        },
        {
         level:29,
         yuanbao:0,
         qijing:0,
-        pianzhang:160,
-        xingpan:80
+        pianzhang:240,
+        xingpan:40
        },
        {
         level:30,
         yuanbao:0,
         qijing:0,
-        pianzhang:160,
-        xingpan:80
+        pianzhang:240,
+        xingpan:40
        },
        {
         level:31,

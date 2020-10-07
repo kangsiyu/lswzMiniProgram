@@ -1,8 +1,8 @@
 <!--pages/联盟活动助手/联盟活动助手.wxml-->
 <view class='tab_container'>
 	<view class='nav-view-one'>
-			<navigator url='../baobing/baobing' class='nav_one'>
-				<text class='nav_text'>我要爆兵</text>
+			<navigator url='千骑排行/千骑排行' class='nav_one'>
+				<text class='nav_text'>千骑踏尘内测</text>
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>

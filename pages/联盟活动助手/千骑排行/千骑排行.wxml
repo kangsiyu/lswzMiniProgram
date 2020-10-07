@@ -1,0 +1,49 @@
+<!--pages/联盟活动助手/千骑排行/千骑排行.wxml-->
+
+<view class='tab_container'>
+  <view class='nav-view-one' wx:if='{{canAdd}}' bindtap="addAction">
+			<view class='nav_one'>
+				<text class='nav_text'>创建联盟</text>
+				<view class='icon-arrow'></view>
+			</view>
+		</view>
+    <view class='nav-view-one' wx:if='{{canEnter}}' bindtap="secondAction">
+			<navigator class='nav_one' url="../千骑排行/千骑联盟落地/千骑联盟落地?lianMengId={{lianMengId}}">
+				<text class='nav_text'>联盟完成情况</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+	<!-- <view class='nav-view-one'>
+			<navigator url='千骑联盟落地/千骑联盟落地' class='nav_one'>
+				<text class='nav_text'>千骑踏尘内测</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view> -->
+</view>
+<text class="result">联盟活动说明：\n联盟管理人员可以创建联盟，之后每次活动可以设定及格线，盟友上传游戏截图既可以实现自动交作业。自动统计交作业人员\n不是管理人员请向管理人员索取上传作业链接\nPS:此次为内测功能，旨在收集各种情况的截图来实现自动化，不保证功能准确希望主公理解</text>
+<block wx:if="{{applyInfo}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>请录入联盟信息</text>
+            </view>
+            <view class='toast-main'>
+								<view class='toast-input'>
+                    <input placeholder='输入联盟名字' bindinput='setName' auto-focus></input>
+                </view>
+                <view class='toast-input'>
+                    <input placeholder='输入联盟及格分' bindinput='setLowLevel' type="number"></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='cancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button bindtap='confirmAcceptance'>确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+  </block>

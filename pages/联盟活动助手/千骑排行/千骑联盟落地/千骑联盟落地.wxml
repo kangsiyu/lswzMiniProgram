@@ -1,0 +1,22 @@
+<!--pages/联盟活动助手/千骑排行/千骑联盟落地/千骑联盟落地.wxml-->
+<view class="tab_container">
+	<view class="propertyContainer">
+		<view class="propertyUnitContainer">
+      <text class="propertyTitle">联盟名称</text>
+       <text class="propertyValue">{{lianMengName}}</text>
+		</view>
+		<view class="propertyUnitContainer">
+      <text class="propertyTitle">要求分数</text>
+       <text class="propertyValue">{{lianMengScore}}</text>
+		</view>
+	</view>
+  <text class="result">{{resultStr}}</text>
+  <view class="pkViewContainer">
+      <view class="buttonContainer">
+      <button class="button" style="width:100%" bindtap="finishAction">联盟完成情况</button>
+      </view>
+      <view class="buttonContainer">
+      <button class="button" style="width:100%" open-type="share">分享上传链接</button>
+      </view>
+  </view>
+</view>

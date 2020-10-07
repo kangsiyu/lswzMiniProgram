@@ -9,11 +9,14 @@
 		</view>
 	</view>
 </view>
-<view class="tips">上面为每个乐器的编码，游戏中翻开看后，点击暂停，在下方记录对应的乐器，记录完毕后可以快速选择相同的乐器</view>
+<view class="tips" wx:if='{{needTip}}'>上面为每个乐器的编码，游戏中点两次翻开看后，点击暂停，在下方记录对应的乐器，记录完毕后可以快速选择相同的乐器</view>
 	<view class="inputContainer">
 		<view class="inputWrapper" wx:for="{{inputInfo}}" wx:key="item" wx:for-item="yueqiInputItem" wx:for-index="idx">
-			<input class="input" type="number" placeholder="乐器编号" bindinput="inputNumber" data-name="{{idx}}" style="background-color:{{yueqiInputItem.color}}" cursor-spacing="60"></input>
+			<input class="input" type="number" placeholder="乐器编号" bindinput="inputNumber" data-name="{{idx}}" style="background-color:{{yueqiInputItem.color}}" cursor-spacing="60" value="{{yueqiInputItem.inputText}}"></input>
 		</view>
+	</view>
+	<view class="reset" wx:if='{{!needTip}}' bindtap="resetAction">
+	<view class="resetButton">重置</view>
 	</view>
   <view class='bottom'>
 <ad unit-id="adunit-68f8096dd3805681" ad-intervals="30"></ad>

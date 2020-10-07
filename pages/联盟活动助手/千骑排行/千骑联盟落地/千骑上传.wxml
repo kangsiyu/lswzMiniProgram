@@ -1,0 +1,51 @@
+<!--pages/联盟活动助手/千骑排行/千骑联盟落地/千骑上传.wxml-->
+<view class="tab_container">
+	<view class="propertyContainer">
+		<view class="propertyUnitContainer">
+      <text class="propertyTitle">联盟名称</text>
+       <text class="propertyValue">{{lianMengName}}</text>
+		</view>
+		<view class="propertyUnitContainer">
+      <text class="propertyTitle">要求分数</text>
+       <text class="propertyValue">{{lianMengScore}}</text>
+		</view>
+	</view>
+  <text class="result">{{resultStr}}</text>
+  <view class="pkViewContainer">
+      <view class="buttonContainer">
+      <button class="button" style="width:100%" bindtap="uploadExampleAction">上传示例图</button>
+      </view>
+      <view class="buttonContainer">
+      <button class="button" style="width:100%" bindtap="uploadAction">点击上传</button>
+      </view>
+  </view>
+</view>
+
+<block wx:if="{{applyInfo}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>确认你的信息</text>
+            </view>
+            <view class='toast-main'>
+                <text>你的昵称</text>
+								<view class='toast-input'>
+                    <input placeholder='你的昵称' bindinput='setName' value="{{userName}}"></input>
+                </view>
+                <text>你的分数</text>
+                <view class='toast-input'>
+                    <input placeholder='你的分数' bindinput='setScore' type="number" value="{{userScore}}"></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='cancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button bindtap='confirmAcceptance'>确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+  </block>

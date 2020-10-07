@@ -90,6 +90,12 @@
 			</navigator>
 		</view> -->
 		<view class='nav-view-two'>
+			<navigator url='../联盟活动助手/千骑排行/千骑联盟落地/千骑上传?lianMengId=6518b7395f538bfa0104c67116bbb5ab' class='nav_one'>
+				<text class='nav_text'>联盟活动助手</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
 			<navigator url='../阵法计算/阵法计算' class='nav_one'>
 				<text class='nav_text'>阵法计算</text>
 				<view class='icon-arrow'></view>

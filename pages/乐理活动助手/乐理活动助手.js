@@ -12,6 +12,7 @@ Page({
    */
   data: {
     yueqiInfo:[],
+    needTip:true,
     remainColor:['#3399ff','#3bd863','#ec6912','#ece812','#12eccf','#470099','#ec1236','#da12ec'],
     inputInfo:[
       {
@@ -150,6 +151,77 @@ Page({
   onShareAppMessage: function () {
 
   },
+  resetAction:function(){
+    this.setData({
+      remainColor:['#3399ff','#3bd863','#ec6912','#ece812','#12eccf','#470099','#ec1236','#da12ec'],
+    inputInfo:[
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+      {
+        inputText:'',
+        color:'#ffffff'
+      },
+    ]
+    })
+  },
   inputNumber:function(e){
     var index = e.currentTarget.dataset.name;
     console.log(index);
@@ -164,6 +236,7 @@ Page({
              element.color = elementList.color;
              isHaveColor = true;
              this.setData({
+               needTip:false,
               inputInfo:this.data.inputInfo
             })
              break;
@@ -175,6 +248,7 @@ Page({
         element.color = color;
         console.log(this.data.inputInfo)
         this.setData({
+          needTip:false,
           inputInfo:this.data.inputInfo
         })
       }

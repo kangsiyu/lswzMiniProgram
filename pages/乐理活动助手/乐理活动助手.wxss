@@ -63,3 +63,22 @@
   height: constant(safe-area-inset-bottom);
   position: fixed;
 }
+.reset{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-around;
+}
+.resetButton{
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #fc6060;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+}
