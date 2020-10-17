@@ -25,7 +25,6 @@ Page({
     })
   },
   onLoad: function () {
-    console.log(111);
     try {
       var value = wx.getStorageSync('PLUG-ADD-MYAPP-KEY')
       if (value) {
@@ -37,7 +36,7 @@ Page({
         wx.setStorageSync('PLUG-ADD-MYAPP-KEY', true)
       }
     } catch (e) {
-      console.log(222)
+      
     }
     var that = this;
     db.collection('configInfo').get({
