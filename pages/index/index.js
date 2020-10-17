@@ -15,7 +15,8 @@ Page({
     needActiveEntrance:false,
     entranceTitle:'',
     needYueLiEntrance:false,
-    imageBrowers:[]
+    imageBrowers:[],
+    needShowTip:false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -24,6 +25,20 @@ Page({
     })
   },
   onLoad: function () {
+    console.log(111);
+    try {
+      var value = wx.getStorageSync('PLUG-ADD-MYAPP-KEY')
+      if (value) {
+        console.log(value)
+      }else{
+        this.setData({
+          needShowTip:true
+        })
+        wx.setStorageSync('PLUG-ADD-MYAPP-KEY', true)
+      }
+    } catch (e) {
+      console.log(222)
+    }
     var that = this;
     db.collection('configInfo').get({
       success:function(res){

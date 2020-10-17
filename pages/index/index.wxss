@@ -10,6 +10,7 @@ page {
   flex-direction: row;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 160px;
 }
 
 /* .nav-view-one {
