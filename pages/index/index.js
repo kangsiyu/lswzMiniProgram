@@ -16,7 +16,8 @@ Page({
     entranceTitle:'',
     needYueLiEntrance:false,
     imageBrowers:[],
-    needShowTip:false
+    needShowTip:false,
+    needJiudingShow:true,
   },
   //事件处理函数
   bindViewTap: function() {

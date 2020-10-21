@@ -1,0 +1,33 @@
+<!--pages/九鼎匹配/九鼎匹配分组.wxml-->
+<scroll-view class="tab_container" enable-flex="true" scroll-y="true"> 
+    <view class="teamContainer">
+        <text>选择赛区</text>
+      </view>
+    <view class="jixianCheckBoxOrigin">
+			<view class="jixianCheckOrigin {{item.select?'selectedCheck':''}}" wx:for="{{teamList}}" wx:key="item" bindtap="teamTap" id="{{item.id}}">
+				<text class="bingName">{{item.name}}</text>
+			</view>
+		</view>
+    <view class="teamContainer">
+        <text>选择小组</text>
+      </view>
+    <view class="smallTeamCheckBox">
+			<view class="jixianCheckOrigin {{item.select?'selectedCheck':''}}" wx:for="{{smallTeamList}}" wx:key="item" bindtap="smallTeamTap" id="{{item.id}}">
+				<text class="bingName">{{item.name}}</text>
+			</view>
+		</view>
+    <view class="teamContainer">
+        <text>军团列表</text>
+      </view>
+    <view class="zhanduiContainer">
+        <view class="zhanduiTitle">
+          <text>入围方式</text>
+        </view>
+        <view class="zhanduiTitle">
+          <text>区服</text>
+        </view>
+        <view class="zhanduiName">
+          <text>军团名称</text>
+        </view>
+    </view>
+</scroll-view>
