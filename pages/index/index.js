@@ -5,6 +5,7 @@ var databaseUtil = require('../../utils/dataBaseUtil')
 const db = wx.cloud.database({
   env: databaseUtil.getDataBaseEnv()
 })
+let videoAd = null;
 Page({
   data: {
     motto: 'Hello World',
@@ -18,6 +19,12 @@ Page({
     imageBrowers:[],
     needShowTip:false,
     needJiudingShow:true,
+    jiudingEntranceType:0,
+    jiudingEntranceTitle:'',
+    //jiudingEntranceTitle:'九鼎数据维护中，点击鼓励一下吧',
+    onceLoad:false,
+    adShow:false,
+    adError:false,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -25,7 +32,59 @@ Page({
       url: '../logs/logs'
     })
   },
+  showAdTap:function(){
+    this.setData({
+      onceLoad:true,
+      adShow:false,
+    })
+    if (videoAd) {
+      videoAd.show().catch(() => {
+        // 失败重试
+        videoAd.load()
+          .then(() => videoAd.show())
+          .catch(err => {
+            console.log('激励视频 广告显示失败')
+          })
+      })
+    }
+  },
   onLoad: function () {
+    // if (wx.createRewardedVideoAd) {
+    //   videoAd = wx.createRewardedVideoAd({
+    //     adUnitId: 'adunit-ad27f0a8535a2694'
+    //   })
+    //   videoAd.onLoad(() => {
+
+    //   })
+    //   videoAd.onError((err) => {
+    //     console.log(err)
+    //       if (err) {
+    //         this.setData({
+    //           adError:true
+    //         })
+    //       }
+    //   })
+    //   videoAd.onClose((res) => {
+    //     if (res && res.isEnded) {
+    //       wx.showToast({
+    //         title: '感谢支持',
+    //       })
+    //       this.setData({
+    //         jiudingEntranceType:0
+    //       })
+    //     } else {
+    //       // 播放中途退出，不下发游戏奖励
+    //       wx.showToast({
+    //         title: '完整看完\n才算支持哦',
+    //         icon:'none'
+    //       })
+    //       this.setData({
+    //         adShow:true,
+    //         onceLoad:false
+    //       })
+    //     }
+    //   })
+    // }
     try {
       var value = wx.getStorageSync('PLUG-ADD-MYAPP-KEY')
       if (value) {

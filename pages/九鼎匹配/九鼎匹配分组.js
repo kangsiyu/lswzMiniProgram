@@ -1,4 +1,10 @@
 // pages/九鼎匹配/九鼎匹配分组.js
+const app = getApp()
+var databaseUtil = require('../../utils/dataBaseUtil')
+const db = wx.cloud.database({
+  env: databaseUtil.getDataBaseEnv()
+})
+let interstitialAd = null
 Page({
 
   /**
@@ -99,13 +105,27 @@ Page({
         select:false
       }
     ],
+    currentTeamList:[],
+    teamId:1,
+    smallTeamId:1,
+    showMatchCard:false,
+    showMatchText:'',
+    adOnceShow:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-5c619c8d7d63ae58'
+      })
+      interstitialAd.onLoad(() => {})
+      interstitialAd.onError((err) => {})
+      interstitialAd.onClose(() => {})
+    } 
+    this.refreshData()
   },
 
   /**
@@ -168,7 +188,8 @@ Page({
     var value = this.data.teamList[index];
     var current='teamList['+index+'].select';
     this.setData({
-      [current]:true
+      [current]:true,
+      teamId:Number(e.currentTarget.id)
     })
     this.refreshData()
   },
@@ -176,7 +197,7 @@ Page({
     for (let index = 0; index < this.data.smallTeamList.length; index++) {
       var current='smallTeamList['+index+'].select';
       this.setData({
-        [current]:false
+        [current]:false,
       })
       
     }
@@ -184,11 +205,137 @@ Page({
     var value = this.data.smallTeamList[index];
     var current='smallTeamList['+index+'].select';
     this.setData({
-      [current]:true
+      [current]:true,
+      smallTeamId:Number(e.currentTarget.id)
     })
     this.refreshData()
   },
+  zhanduiTap:function(e){
+     
+    if (interstitialAd && this.data.adOnceShow == false) {
+      var that = this;
+      that.setData({
+        adOnceShow:true
+       })
+      interstitialAd.show().catch((err) => {
+       console.error(err)
+       that.setData({
+        adOnceShow:false
+       })
+       
+    })
+    }
+     var positon = Number(e.currentTarget.id)
+     console.log(positon)
+     var that = this;
+     var teamId = this.data.teamId
+     var smallTeamId = this.data.smallTeamId
+    db.collection('matchList').where(db.command.or([
+      {
+        teamId:teamId,
+        leftPosition:positon,
+      },
+      {
+        teamId:teamId,
+        rightPosition:positon,
+      }
+    ])).get({
+      success:function(res){
+        console.log(res);
+        wx.hideLoading({
+          success: (res) => {},
+        })
+        if (res.data.length==0) {
+           wx.showToast({
+             title: '抱歉呢主公，未找到匹配结果',
+             icon:'none'
+           })
+        }else{
+          const element = res.data[0];
+          console.log(element)
+          if (element.leftPosition == positon) {
+            that.findMatch(element.rightPosition)
+          }else{
+            that.findMatch(element.leftPosition)
+          }
+        }
+      }
+    })
+  },
+  findMatch:function(e){
+    console.log(e)
+    var teamId = this.data.teamId
+    var smallTeamId = this.data.smallTeamId
+    console.log("teamId"+teamId +"\nsmallTeamId"+smallTeamId)
+    var that = this;
+    wx.showLoading({
+      title: '正在查询',
+    })
+    db.collection('jiudingTeamList').where(
+      {
+        teamId:teamId,
+        position:e
+      }).get({
+      success:function(res){
+        console.log(res);
+        wx.hideLoading({
+          success: (res) => {},
+        })
+        if (res.data.length==0) {
+           wx.showToast({
+             title: '抱歉呢主公，未找到匹配结果',
+             icon:'none'
+           })
+        }else{
+          const element = res.data[0];
+          console.log(element)
+          var text = "对阵军团:"+element.name +"\n所属区服:"+element.serverName+"\n入围方式:"+element.enterName+"\n入围时排名："+element.rank
+          that.setData({
+            showMatchCard:true,
+            showMatchText:text
+          })
+        }
+      }
+    })
+  },
+  introCancel: function () {
+    var that = this
+    that.setData({
+      showMatchCard:false
+    })
+  },
   refreshData:function(){
+    var teamId = this.data.teamId
+    var smallTeamId = this.data.smallTeamId
     
+    var that = this;
+    wx.showLoading({
+      title: '正在加载',
+    })
+    var param = {
+      teamId:teamId,
+      smallTeamId:smallTeamId
+    }
+    console.log(param)
+    wx.cloud.callFunction({
+      name: 'jiudingTeamList',
+      data:param,
+      success(res) {
+        console.log(res);
+        wx.hideLoading({
+          success: (res) => {},
+        })
+        that.setData({
+          currentTeamList:res.result.data
+        })
+      },
+      fail(err) {
+        console.log(err)
+        wx.hideLoading({
+          success: (res) => {},
+        })
+      }
+    })
+
   }
 })

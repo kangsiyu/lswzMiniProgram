@@ -1,0 +1,81 @@
+/* pages/联盟情报/联盟情报首页.wxss */
+page {
+  height: 100%;
+}
+
+.tab_container {
+  margin-top: 20rpx;
+  clear: both;
+  width: 100%;
+  display: inline-block;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* .nav-view-one {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gainsboro;
+  margin: 1px;
+} */
+
+.nav-view-two {
+  flex: left;
+  width: 48%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gainsboro;
+  margin: 1px;
+  height: 40px;
+  display: flex;
+}
+.nav-view-one {
+  flex: left;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gainsboro;
+  margin: 1px;
+  height: 50px;
+  display: flex;
+}
+
+.tab_content {
+  
+}
+
+.nav_one {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.nav_text {
+  flex: 1;
+}
+
+.icon-arrow:after {
+  content: '';
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  width: 7px;
+  height: 7px;
+  margin-right: 6rpx;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  transform: rotate(45deg);
+}
+.bottom{
+  width: 100%;
+  bottom: 0rpx;
+  height: constant(safe-area-inset-bottom);
+  position: fixed;
+}

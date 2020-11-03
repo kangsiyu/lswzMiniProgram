@@ -1,0 +1,24 @@
+<!--pages/联盟情报/联盟情报首页.wxml-->
+<view class='tab_container'>
+	<view class='nav-view-one'>
+			<navigator url='联盟情报上传/联盟情报上传' class='nav_one'>
+				<text class='nav_text'>联盟、军团情报上传</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+    </view>
+    <view class='nav-view-one'>
+			<navigator url='我的上传/我的上传' class='nav_one'>
+				<text class='nav_text'>我的上传记录</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+    <view class='nav-view-one'>
+			<view class='nav_one'>
+				<text class='nav_text'>联盟、军团情报查询（敬请期待）</text>
+			</view>
+    </view>
+</view>
+
+<view class='bottom'>
+	<ad unit-id="adunit-1700c0d079dadd80" ad-intervals="30"></ad>
+</view>

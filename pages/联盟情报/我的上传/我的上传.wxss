@@ -1,0 +1,34 @@
+/* pages/联盟情报/我的上传/我的上传.wxss */
+
+Page{
+  width: 100%;
+  height: 100%;
+}
+.listContainer{
+  height: 150px;
+  width: 100%;
+  border: 1px solid #f2f2f2;
+  margin-bottom: 2px;
+  padding-top: 2px;
+}
+.listItem{
+  height: 25px;
+  margin-left: 10px;
+  line-height: 25px;
+  font-size: 15px;
+}
+.lastItem{
+  height: 25px;
+  margin-left: 10px;
+  line-height: 25px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.imageTitle{
+  display: block;
+}
+.tipArea{
+  position: fixed;
+}

@@ -197,14 +197,14 @@ Page({
         level:26,
         yuanbao:0,
         qijing:0,
-        pianzhang:240,
+        pianzhang:160,
         xingpan:40
        },
        {
         level:27,
         yuanbao:0,
         qijing:0,
-        pianzhang:240,
+        pianzhang:200,
         xingpan:40
        },
        {
@@ -218,14 +218,14 @@ Page({
         level:29,
         yuanbao:0,
         qijing:0,
-        pianzhang:240,
+        pianzhang:280,
         xingpan:40
        },
        {
         level:30,
         yuanbao:0,
         qijing:0,
-        pianzhang:240,
+        pianzhang:320,
         xingpan:40
        },
        {

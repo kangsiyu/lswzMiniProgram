@@ -17,7 +17,7 @@
 			</view>
 		</view>
     <view class="teamContainer">
-        <text>军团列表</text>
+        <text>军团列表\n(点击自己的军团查看匹配结果)</text>
       </view>
     <view class="zhanduiContainer">
         <view class="zhanduiTitle">
@@ -26,8 +26,51 @@
         <view class="zhanduiTitle">
           <text>区服</text>
         </view>
+        <view class="zhanduiTitle">
+          <text>入围排名</text>
+        </view>
         <view class="zhanduiName">
           <text>军团名称</text>
         </view>
     </view>
+    <view class="zhanduiListContainer">
+      <view class="zhanduiContainer" wx:for="{{currentTeamList}}" wx:key="item" bindtap="zhanduiTap" id="{{item.position}}">
+          <view class="zhanduiTitle">
+            <text>{{item.enterType==0?"军阶":"战力"}}</text>
+          </view>
+          <view class="zhanduiTitle">
+            <text>{{item.serverName}}</text>
+          </view>
+          <view class="zhanduiTitle">
+            <text>{{item.rank}}</text>
+          </view>
+          <view class="zhanduiName">
+            <text>{{item.name}}</text>
+          </view>
+      </view>
+    </view>
 </scroll-view>
+<view class='bottomAd'>
+	<ad unit-id="adunit-ca581143da7b4c6a" ad-intervals="30"></ad>
+</view>
+<block wx:if="{{showMatchCard}}">
+      <view class='toast-box'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>匹配结果</text>
+            </view>
+            <view class='toast-main'>
+              <text class="introCard">{{showMatchText}}</text>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='introCancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button bindtap='introCancel'>确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+  </block>

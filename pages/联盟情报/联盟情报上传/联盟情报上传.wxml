@@ -1,0 +1,49 @@
+<!--pages/联盟情报/联盟情报上传/联盟情报上传.wxml-->
+<view class='tab_container'>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">平台选择</text>
+      </view>
+      <view class="select-wrap">
+        <select id="select" options="{{options}}" key="city_id" text="city_name" bind:change="change"></select>
+      </view>
+  </view>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">区服序号</text>
+      </view>
+      <input class="input" placeholder="区服序号，例如48" type="number" bindinput="seviceInput">0</input>
+  </view>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">联盟关键字</text>
+      </view>
+      <input class="input" placeholder="简称或全称，多个用逗号隔开" bindinput="lianmengInput">0</input>
+  </view>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">军团关键字</text>
+      </view>
+      <input class="input" placeholder="军团名称" bindinput="juntuanInput">0</input>
+  </view>
+
+  
+
+  <text class="tips">最多支持上传九张图片，上传后需要审核，审核通过才可以被其他人看到，图片中军团名称不要遮挡，否则无法审核通过，审核通过后上传者将额外获得 查询次数 奖励</text>
+  <view class="intro" bindtap="introAction">
+     <text class="introText">点击查看上传示例图</text>
+  </view>
+  <view class="imageContainer">
+      <view class="uploadButtonContainer" wx:if="{{tempFiles.length>0}}">
+         <view class="uploadButton" bindtap="lookImgAction">
+              预览图片
+         </view>
+       </view>
+       <view class="uploadButtonContainer">
+         <view class="uploadButton" bindtap="uploadAction">
+              选择图片
+         </view>
+       </view>
+  </view>
+  <button class="calculate" bindtap="calculateAction" style="width:100%" wx:if="{{tempFiles.length>0}}">上传</button>
+</view>

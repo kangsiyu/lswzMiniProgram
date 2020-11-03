@@ -9,12 +9,6 @@
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
-	<view class='nav-view-one' wx:if='{{needJiudingShow}}'>
-			<navigator url='../九鼎匹配/九鼎匹配分组' class='nav_one'>
-				<text class='nav_text'>微信九鼎S6匹配对手查询</text>
-				<view class='icon-arrow'></view>
-			</navigator>
-	</view>
 	<view class='nav-view-one'>
 			<navigator url='../baobing/baobing' class='nav_one'>
 				<text class='nav_text'>我要爆兵</text>
@@ -105,6 +99,12 @@
 		<view class='nav-view-two'>
 			<navigator url='../阵法计算/阵法计算' class='nav_one'>
 				<text class='nav_text'>阵法计算</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../联盟情报/联盟情报首页' class='nav_one'>
+				<text class='nav_text'>联盟\军团情报</text>
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
