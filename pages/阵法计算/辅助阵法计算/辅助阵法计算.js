@@ -123,6 +123,41 @@ Page({
         pianzhang:20,
         xingpan:10
        },
+       {
+        level:16,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:40,
+        xingpan:20
+       },
+       {
+        level:17,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:40,
+        xingpan:20
+       },
+       {
+        level:18,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:40,
+        xingpan:20
+       },
+       {
+        level:19,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:40,
+        xingpan:20
+       },
+       {
+        level:20,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:40,
+        xingpan:20
+       },
       ],
   },
 
@@ -224,9 +259,9 @@ Page({
        })
        return;
     }
-    if (target>15) {
+    if (target>20) {
       wx.showToast({
-        title: '15级后小窝还不知道，主公稍等下哦',
+        title: '20级后小窝还不知道，主公稍等下哦',
         icon:'none'
       })
       return;

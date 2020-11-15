@@ -38,10 +38,10 @@ Page({
     wx.showLoading({
       title: '正在加载',
     })
-    db.collection('lianmengInfoPreCheckList').where({
-      data:{
-        userId:app.globalData.userId
-      }
+    console.log(String(app.globalData.openid))
+    db.collection('lianmengInfoPreCheckList').where(
+    {
+        userId:String(app.globalData.openid)
     })
     .skip(this.data.currentPage * 20)
     .get({
@@ -52,8 +52,8 @@ Page({
         that.setData({
           alreadyLoad:true
         })
+        console.log("请求成功", res)
         if (res.data && res.data.length > 0) {
-          console.log("请求成功", res.data)
           //把新请求到的数据添加到dataList里  
           let list = that.data.dataList.concat(res.data)
           that.setData({
