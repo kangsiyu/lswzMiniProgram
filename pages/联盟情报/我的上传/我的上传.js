@@ -4,6 +4,7 @@ var databaseUtil = require('../../../utils/dataBaseUtil')
 const db = wx.cloud.database({
   env: databaseUtil.getDataBaseEnv()
 })
+let videoAd = null
 Page({
 
   /**
@@ -14,18 +15,20 @@ Page({
     dataList: [], //放置返回数据的数组  
     loadMore: false, //"上拉加载"的变量，默认false，隐藏  
     loadAll: false, //“没有数据”的变量，默认false，隐藏 
-    alreadyLoad:false 
+    alreadyLoad:false,
+    needAd:false,
+    onceLoad:false,
+    adShow:false,
+    adError:false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({ title:'我上传的情报'})
     if (app.globalData.openid) {
       this.requestData()
     }else{
-      console.log(11);
       var that = this;
       app.loginInfo(function(openid){
         console.log('回调成功');
@@ -38,12 +41,8 @@ Page({
     wx.showLoading({
       title: '正在加载',
     })
-    db.collection('lianmengInfoPreCheckList').where({
-      data:{
-        userId:app.globalData.userId
-      }
-    })
-    .skip(this.data.currentPage * 20)
+    db.collection('qiuxianList').orderBy('date','desc')
+    .skip(this.data.currentPage*20)
     .get({
       success(res) {
         wx.hideLoading({
@@ -143,7 +142,24 @@ Page({
       })
     }
   },
-
+  tapCopy:function(e){
+    var index = e.currentTarget.dataset.name;
+    console.log(index)
+    var element = this.data.dataList[index]
+    console.log(element.wechatNumber)
+    wx.setClipboardData({
+      data: element.wechatNumber,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            wx.showToast({
+              title: '复制成功'
+            })
+          }
+        })
+      }
+    })
+  },
   /**
    * 用户点击右上角分享
    */

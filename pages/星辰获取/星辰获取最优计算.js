@@ -1,5 +1,5 @@
 // pages/星辰获取/星辰获取最优计算.js
-let videoAd = null;
+let interstitialAd = null
 Page({
 
   /**
@@ -8,48 +8,21 @@ Page({
   data: {
     resultStr:"星辰获取最优计算参考：",
     money:0,
-    onceLoad:false,
-    adShow:false,
-    adError:false,
+    adOnceShow:false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (wx.createRewardedVideoAd) {
-      videoAd = wx.createRewardedVideoAd({
-        adUnitId: 'adunit-ad27f0a8535a2694'
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-fef7aee9500a9c68'
       })
-      videoAd.onLoad(() => {
-
-      })
-      videoAd.onError((err) => {
-        console.log(err)
-          if (err) {
-            this.setData({
-              adError:true
-            })
-          }
-      })
-      videoAd.onClose((res) => {
-        if (res && res.isEnded) {
-          wx.showToast({
-            title: '感谢支持',
-          })
-        } else {
-          // 播放中途退出，不下发游戏奖励
-          wx.showToast({
-            title: '完整看完\n才算支持哦',
-            icon:'none'
-          })
-          this.setData({
-            adShow:true,
-            onceLoad:false
-          })
-        }
-      })
-    }
+      interstitialAd.onLoad(() => {})
+      interstitialAd.onError((err) => {})
+      interstitialAd.onClose(() => {})
+    } 
   },
 
   /**
@@ -106,21 +79,7 @@ Page({
     })
   },
   clickAd:function(){
-    console.log('click');
-    this.setData({
-      onceLoad:true,
-      adShow:false,
-    })
-    if (videoAd) {
-      videoAd.show().catch(() => {
-        // 失败重试
-        videoAd.load()
-          .then(() => videoAd.show())
-          .catch(err => {
-            console.log('激励视频 广告显示失败')
-          })
-      })
-    }
+    
   },
   calculateAction:function(){
     console.log(this.data.money);
@@ -155,10 +114,20 @@ Page({
     if (money >= 50000) {
       resultStr = '星辰获取最优计算参考：\n大佬你不需要考虑，见到星辰买就对了，都划算！'
     }
-    var adShow = (this.data.onceLoad || this.data.adError)?false:true;
+    if (interstitialAd && this.data.adOnceShow == false) {
+      var that = this;
+      that.setData({
+        adOnceShow:true
+       })
+      interstitialAd.show().catch((err) => {
+       console.error(err)
+       that.setData({
+        adOnceShow:false
+       })
+    })
+    }
     this.setData({
       resultStr:resultStr,
-      adShow:adShow,
     })
   }
 })

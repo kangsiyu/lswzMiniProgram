@@ -38,7 +38,7 @@
 		</view>
 		<view class='nav-view-two'>
 			<navigator url='../升堡消耗/升堡消耗' class='nav_one'>
-				<text class='nav_text'>王城前置查询</text>
+				<text class='nav_text'>45王城前置查询</text>
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
@@ -84,30 +84,24 @@
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
-		<!-- <view class='nav-view-two'>
-			<navigator url='../联盟活动助手/联盟活动助手' class='nav_one'>
-				<text class='nav_text'>联盟活动助手</text>
-				<view class='icon-arrow'></view>
-			</navigator>
-		</view> -->
-		<!-- <view class='nav-view-two'>
-			<navigator url='../联盟活动助手/千骑排行/千骑联盟落地/千骑上传?lianMengId=6518b7395f538bfa0104c67116bbb5ab' class='nav_one'>
-				<text class='nav_text'>联盟活动助手</text>
-				<view class='icon-arrow'></view>
-			</navigator>
-		</view> -->
 		<view class='nav-view-two'>
 			<navigator url='../阵法计算/阵法计算' class='nav_one'>
 				<text class='nav_text'>阵法计算</text>
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
-		<view class='nav-view-two'>
+		<view class='nav-view-two' wx:if="{{needQiuxian}}">
+			<navigator url='../求贤令/联盟情报首页' class='nav_one'>
+				<text class='nav_text'>求贤令助手</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<!-- <view class='nav-view-two'>
 			<navigator url='../联盟情报/联盟情报首页' class='nav_one'>
 				<text class='nav_text'>联盟\军团情报</text>
 				<view class='icon-arrow'></view>
 			</navigator>
-		</view>
+		</view> -->
 		<view class='nav-view-two' wx:for="{{imageBrowers}}" wx:key="item">
 			<navigator url='{{item.url}}' class='nav_one'>
 				<text class='nav_text'>{{item.title}}</text>

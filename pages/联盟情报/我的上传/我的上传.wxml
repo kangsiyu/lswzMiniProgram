@@ -1,27 +1,10 @@
 <!--pages/联盟情报/我的上传/我的上传.wxml-->
-<view class="listContainer" wx:for="{{dataList}}" wx:key="item">
+<ad unit-id="adunit-d9d73ff48cfd4e74"></ad>
+<view class="listContainer" wx:for="{{dataList}}" wx:key="item" wx:for-index="idx">
   <view class="listItem">
-    {{'区服：'+ (item.areaId == 1?'微信':'手Q')+item.serviceIndex+'区'}}
+    {{'单价：'+ item.price}}
   </view>
-  <view class="listItem">
-    {{'联盟关键字：'+ item.lianmengKeyWords}}
+  <view class="listItem" wx:if="{{!needAd}}" bindtap="tapCopy" data-name="{{idx}}">
+    {{'微信号（点击复制）：'+ item.wechatNumber}}
   </view>
-  <view class="listItem">
-    {{'军团关键字：'+ item.juntuanKeyWords}}
-  </view>
-  <view class="listItem">
-    {{'军团关键字：'+ item.juntuanKeyWords}}
-  </view>
-  <view class="listItem">
-    {{'审核状态：'+ (item.status==1?'未审核':(item.status==2
-    ?'审核通过（获取5次查询次数）':('审核未通过（原因为' +item.reason+'）')))}}
-  </view>
-  <view class="listItem">
-    <view class="imageTitle">{{"上传了"+item.image.length+"图片"}}
-    </view>
-    
-  </view>
-</view>
-<view class="tipArea" wx:if="{{alreadyLoad && dataList.length == 0}}">
-
 </view>

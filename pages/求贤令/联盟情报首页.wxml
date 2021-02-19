@@ -1,0 +1,19 @@
+<!--pages/联盟情报/联盟情报首页.wxml-->
+<view class='tab_container'>
+	<view class='nav-view-one'>
+			<navigator url='../求贤令/求贤令' class='nav_one'>
+				<text class='nav_text'>发布供应信息</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-one'>
+			<navigator url='../联盟情报/我的上传/我的上传' class='nav_one'>
+				<text class='nav_text'>查看供应信息</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+    </view>
+</view>
+<text class="tips">平台只提供联系，有一定被骗风险，大家酌情后自行联系，平台不做任何担保，望周知</text>
+<view class='bottom'>
+	<ad unit-id="adunit-1700c0d079dadd80" ad-intervals="30"></ad>
+</view>

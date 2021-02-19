@@ -1,0 +1,24 @@
+<!--pages/求贤令/求贤令.wxml-->
+<view class='tab_container'>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">单价（元）</text>
+      </view>
+      <input class="input" placeholder="每个求贤令单价" type="digit" bindinput="priceInput">0</input>
+  </view>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">微信号</text>
+      </view>
+      <input class="input" placeholder="微信号" bindinput="wechatNumInput">0</input>
+  </view>
+  <text class="tips">同一微信号重复上传只会刷新数据，并置顶（每两个小时最多置顶一次）,微信号所有人都可以查看</text>
+  <view class="imageContainer">
+    <view class="uploadButtonContainer">
+         <view class="uploadButton" bindtap="uploadAction">
+              发布
+         </view>
+      </view>
+  </view>
+  
+</view>

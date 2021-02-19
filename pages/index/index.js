@@ -5,7 +5,6 @@ var databaseUtil = require('../../utils/dataBaseUtil')
 const db = wx.cloud.database({
   env: databaseUtil.getDataBaseEnv()
 })
-let videoAd = null;
 Page({
   data: {
     motto: 'Hello World',
@@ -19,6 +18,7 @@ Page({
     imageBrowers:[],
     needShowTip:false,
     needJiudingShow:true,
+    needQiuxian:false,
     jiudingEntranceType:0,
     jiudingEntranceTitle:'',
     //jiudingEntranceTitle:'九鼎数据维护中，点击鼓励一下吧',
@@ -33,20 +33,7 @@ Page({
     })
   },
   showAdTap:function(){
-    this.setData({
-      onceLoad:true,
-      adShow:false,
-    })
-    if (videoAd) {
-      videoAd.show().catch(() => {
-        // 失败重试
-        videoAd.load()
-          .then(() => videoAd.show())
-          .catch(err => {
-            console.log('激励视频 广告显示失败')
-          })
-      })
-    }
+    
   },
   onLoad: function () {
     // if (wx.createRewardedVideoAd) {
@@ -111,7 +98,8 @@ Page({
            }
            if (element.needYueLiEntrance) {
              that.setData({
-               needYueLiEntrance:element.needYueLiEntrance
+               needYueLiEntrance:element.needYueLiEntrance,
+               needQiuxian:element.needQiuXian
              })
            }
            if (element.imageBrowers.length) {

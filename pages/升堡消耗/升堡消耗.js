@@ -556,6 +556,81 @@ Page({
         baoshi:7100000,
         xingchen:30000
       },
+      {
+        dependInfo:[{
+          'dependId':1,
+          'dependLevel':40
+        },{
+          'dependId':13,
+          'dependLevel':40
+        }],
+        mutou:1400000000,
+        liangshi:1400000000,
+        tie:130000000,
+        baoshi:8100000,
+        xingchen:33000,
+        jianding:1000,
+      },
+      {
+        dependInfo:[{
+          'dependId':1,
+          'dependLevel':41
+        },{
+          'dependId':17,
+          'dependLevel':41
+        }],
+        mutou:1600000000,
+        liangshi:1600000000,
+        tie:150000000,
+        baoshi:9100000,
+        xingchen:36000,
+        jianding:6000,
+      },
+      {
+        dependInfo:[{
+          'dependId':1,
+          'dependLevel':42
+        },{
+          'dependId':18,
+          'dependLevel':42
+        }],
+        mutou:1800000000,
+        liangshi:1800000000,
+        tie:160000000,
+        baoshi:10000000,
+        xingchen:39000,
+        jianding:18000,
+      },
+      {
+        dependInfo:[{
+          'dependId':1,
+          'dependLevel':43
+        },{
+          'dependId':16,
+          'dependLevel':43
+        }],
+        mutou:2000000000,
+        liangshi:2000000000,
+        tie:180000000,
+        baoshi:11000000,
+        xingchen:42000,
+        jianding:30000,
+      },
+      {
+        dependInfo:[{
+          'dependId':1,
+          'dependLevel':44
+        },{
+          'dependId':5,
+          'dependLevel':44
+        }],
+        mutou:2300000000,
+        liangshi:2300000000,
+        tie:210000000,
+        baoshi:13000000,
+        xingchen:45000,
+        jianding:45000,
+      },
     ]
   },
 
@@ -627,7 +702,7 @@ Page({
   calculateAction:function(){
     console.log('currentLevel = '+this.data.currentLevel+'targetLevel'+this.data.targetLevel);
     
-    if ((Math.floor(this.data.targetLevel) <=Math.floor(this.data.currentLevel))||(this.data.targetLevel <= 0) ||(this.data.targetLevel>40)||(this.data.currentLevel<=0)) {
+    if ((Math.floor(this.data.targetLevel) <=Math.floor(this.data.currentLevel))||(this.data.targetLevel <= 0) ||(this.data.targetLevel>45)||(this.data.currentLevel<=0)) {
        wx.showToast({
          title: '请输入正确数据',
        })
@@ -638,15 +713,18 @@ Page({
     var tieTotal = 0;
     var baoshiTotal = 0;
     var xingchenTotal = 0;
+    var jiandingTotal = 0;
     var dependInfo = '前置建筑';
     for (let index = Math.floor(this.data.currentLevel); index < Math.floor(this.data.targetLevel); index++) {
       const element = this.data.levelInfo[index];
+      let jianding = element.jianding?element.jianding:0
       console.log('element'+element);
       mutouTotal = Math.floor(mutouTotal)+Math.floor(element.mutou);
       liangshiTotal = Math.floor(liangshiTotal) +Math.floor(element.liangshi);
       tieTotal = Math.floor(tieTotal) +Math.floor(element.tie);
       baoshiTotal = Math.floor(baoshiTotal) +Math.floor(element.baoshi);
       xingchenTotal = Math.floor(xingchenTotal) +Math.floor(element.xingchen);
+      jiandingTotal = Math.floor(jiandingTotal) +Math.floor(jianding);
       var dependStr = '';
       for (let j = 0; j < element.dependInfo.length; j++) {
         const depend = element.dependInfo[j];
@@ -658,7 +736,7 @@ Page({
       }
       dependInfo = dependInfo+'\n'+Math.floor(index+1)+'堡:'+dependStr;
     }
-    var ziyuan = '资源消耗\n(仅王城升级，前置建筑的后续版本加入):\n木头:'+formatStr(mutouTotal)+'\n粮食:'+formatStr(liangshiTotal)+'\n铁:'+formatStr(tieTotal)+'\n宝石:'+formatStr(baoshiTotal)+'\n星辰:'+formatStr(xingchenTotal)+'\n';
+    var ziyuan = '资源消耗\n(仅王城升级，前置建筑的后续版本加入):\n木头:'+formatStr(mutouTotal)+'\n粮食:'+formatStr(liangshiTotal)+'\n铁:'+formatStr(tieTotal)+'\n宝石:'+formatStr(baoshiTotal)+'\n星辰:'+formatStr(xingchenTotal)+'\n坚定星魂：'+formatStr(jiandingTotal)+'\n';
     this.setData({
       resultStr:"王城计算结果:\n"+ziyuan+dependInfo
     })

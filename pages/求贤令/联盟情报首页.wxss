@@ -79,3 +79,8 @@ page {
   height: constant(safe-area-inset-bottom);
   position: fixed;
 }
+.tips{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}

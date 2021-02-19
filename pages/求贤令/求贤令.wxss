@@ -1,0 +1,98 @@
+/* pages/求贤令/求贤令.wxss */
+/* pages/联盟情报/联盟情报上传/联盟情报上传.wxss */
+page {
+  height: 100%;
+}
+
+.tab_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.inputContainer{
+  height: 70rpx;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.titleContainer{
+  width: 33%;
+  text-align: center;
+  background-color:#f0f0f0;
+  align-items: center;
+  justify-items: center;
+}
+.title{
+  display: block;
+  line-height: 70rpx;
+  text-align: center;
+}
+.select-wrap{
+  width: 66%;
+}
+.input{
+  padding-left: 20px;
+  border: 1rpx solid #ddd;
+  width: 64%;
+  height: 99%;
+}
+.tips{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+.intro{
+  height: 20px;
+  width: 50%;
+  margin: 3px;
+}
+.introText{
+  line-height: 20px;
+  color: #fc6060;
+  margin-left: 20rpx;
+}
+.calculate{
+  height: 40px;
+  border: 1rpx solid white;
+  background-color: #fc6060;
+  width: 100%;
+  color: white;
+  position: fixed;
+  bottom: 0rpx;
+  height: constant(safe-area-inset-bottom);
+}
+.imageContainer{
+  margin-bottom: 50px;
+}
+.uploadButtonContainer{
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.uploadButton{
+  width: 50%;
+  text-align: center;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #fc6060;
+  color: white;
+  line-height: 30px;
+}
+.alreadyUploadContainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.alreadyUpload{
+  width: 40px;
+  height: 40px;
+  background-color: aqua;
+}

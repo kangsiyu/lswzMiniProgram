@@ -94,6 +94,7 @@
 }
 .input{
   padding-left: 20px;
+  width: 55%;
 }
 .unitInput{
   padding-left: 1.3%;

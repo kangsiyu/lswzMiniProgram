@@ -132,7 +132,7 @@ Page({
   },
   timeAllInput:function(e){
     var timeAllValue = e.detail.value;
-    this.timeInfo.timeAll = timeAllValue;
+    this.timeInfo.timeAll = Number(timeAllValue)*10000;
     console.log(timeAllValue + this.timeInfo.timeAll);
   },
   hoursInput:function(e){
@@ -173,7 +173,7 @@ Page({
        })
     })
     }
-    var result = this.data.resultStr;
+    var result = '爆兵结果：';
     for (let index = 0; index < this.data.bingZhongList.length; index++) {
       const element = this.data.bingZhongList[index];
       if (element.select) {
