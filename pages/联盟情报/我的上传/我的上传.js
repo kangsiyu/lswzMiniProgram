@@ -51,8 +51,8 @@ Page({
         that.setData({
           alreadyLoad:true
         })
+        console.log("请求成功", res)
         if (res.data && res.data.length > 0) {
-          console.log("请求成功", res.data)
           //把新请求到的数据添加到dataList里  
           let list = that.data.dataList.concat(res.data)
           that.setData({

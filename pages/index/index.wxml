@@ -104,8 +104,8 @@
 		</view> -->
 		<view class='nav-view-two' wx:for="{{imageBrowers}}" wx:key="item">
 			<navigator url='{{item.url}}' class='nav_one'>
-				<text class='nav_text'>{{item.title}}</text>
-				<view class='icon-arrow'></view>
+				<text clxwass='nav_text'>{{item.title}}</text>
+				<view cxwlass='icon-arrow'></view>
 			</navigator>
 		</view>
 </view>
