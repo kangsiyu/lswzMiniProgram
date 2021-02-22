@@ -30,7 +30,8 @@
     "pages/联盟情报/联盟情报上传/联盟情报上传",
     "pages/联盟情报/联盟情报查看/联盟情报查看",
     "pages/联盟情报/我的上传/我的上传",
-    "pages/求贤令/求贤令"
+    "pages/求贤令/求贤令",
+    "pages/天尊计算/天尊计算"
   ],
   "window": {
     "backgroundTextStyle": "light",

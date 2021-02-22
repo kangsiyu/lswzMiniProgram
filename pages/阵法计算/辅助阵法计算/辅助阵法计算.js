@@ -158,6 +158,146 @@ Page({
         pianzhang:40,
         xingpan:20
        },
+       {
+        level:21,
+        yuanbao:0,
+        qijing:20,
+        pianzhang:0,
+        xingpan:20
+       },
+       {
+        level:22,
+        yuanbao:0,
+        qijing:20,
+        pianzhang:0,
+        xingpan:20
+       },
+       {
+        level:23,
+        yuanbao:0,
+        qijing:20,
+        pianzhang:0,
+        xingpan:20
+       },
+       {
+        level:24,
+        yuanbao:0,
+        qijing:20,
+        pianzhang:0,
+        xingpan:20
+       },
+       {
+        level:25,
+        yuanbao:0,
+        qijing:20,
+        pianzhang:0,
+        xingpan:20
+       },
+       {
+        level:26,
+        yuanbao:0,
+        qijing:40,
+        pianzhang:0,
+        xingpan:40
+       },
+       {
+        level:27,
+        yuanbao:0,
+        qijing:60,
+        pianzhang:0,
+        xingpan:40
+       },
+       {
+        level:28,
+        yuanbao:0,
+        qijing:80,
+        pianzhang:0,
+        xingpan:40
+       },
+       {
+        level:29,
+        yuanbao:0,
+        qijing:100,
+        pianzhang:0,
+        xingpan:40
+       },
+       {
+        level:30,
+        yuanbao:0,
+        qijing:120,
+        pianzhang:0,
+        xingpan:40
+       },
+       {
+        level:31,
+        yuanbao:0,
+        qijing:140,
+        pianzhang:0,
+        xingpan:80
+       },
+       {
+        level:32,
+        yuanbao:0,
+        qijing:160,
+        pianzhang:0,
+        xingpan:80
+       },
+       {
+        level:33,
+        yuanbao:0,
+        qijing:180,
+        pianzhang:0,
+        xingpan:80
+       },
+       {
+        level:34,
+        yuanbao:0,
+        qijing:200,
+        pianzhang:0,
+        xingpan:80
+       },
+       {
+        level:35,
+        yuanbao:0,
+        qijing:220,
+        pianzhang:0,
+        xingpan:80
+       },
+       {
+        level:36,
+        yuanbao:0,
+        qijing:240,
+        pianzhang:0,
+        xingpan:160
+       },
+       {
+        level:37,
+        yuanbao:0,
+        qijing:260,
+        pianzhang:0,
+        xingpan:160
+       },
+       {
+        level:38,
+        yuanbao:0,
+        qijing:280,
+        pianzhang:0,
+        xingpan:160
+       },
+       {
+        level:39,
+        yuanbao:0,
+        qijing:300,
+        pianzhang:0,
+        xingpan:160
+       },
+       {
+        level:40,
+        yuanbao:0,
+        qijing:320,
+        pianzhang:0,
+        xingpan:160
+       },
       ],
   },
 
@@ -259,13 +399,6 @@ Page({
        })
        return;
     }
-    if (target>20) {
-      wx.showToast({
-        title: '20级后小窝还不知道，主公稍等下哦',
-        icon:'none'
-      })
-      return;
-    }
     let totalyuanbao = 0;
     let totalpianzhang = 0;
     let totalxingpan = 0;
@@ -277,7 +410,7 @@ Page({
       totalxingpan = totalxingpan +Number(element.xingpan);
       totalqijing = totalqijing + Number(element.qijing);
     }
-    var resultStr = "计算结果：\n需要星盘："+totalxingpan+"个\n需要阵法残卷："+totalpianzhang+'个';
+    var resultStr = "计算结果：\n需要星盘："+totalxingpan+"个\n需要阵法残卷："+totalpianzhang+'个\n需要稀有阵法残卷'+totalqijing+"个";
     this.setData({
       resultStr:resultStr
     })

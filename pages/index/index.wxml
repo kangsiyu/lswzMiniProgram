@@ -86,13 +86,19 @@
 		</view>
 		<view class='nav-view-two'>
 			<navigator url='../阵法计算/阵法计算' class='nav_one'>
-				<text class='nav_text'>阵法计算</text>
+				<text class='nav_text'>阵法全等级计算</text>
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
 		<view class='nav-view-two' wx:if="{{needQiuxian}}">
 			<navigator url='../求贤令/联盟情报首页' class='nav_one'>
 				<text class='nav_text'>求贤令助手</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../天尊计算/天尊计算' class='nav_one'>
+				<text class='nav_text'>天尊计算计算</text>
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>

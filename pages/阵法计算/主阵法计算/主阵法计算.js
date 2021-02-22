@@ -232,15 +232,71 @@ Page({
         level:31,
         yuanbao:0,
         qijing:100,
-        pianzhang:80,
-        xingpan:360
+        pianzhang:360,
+        xingpan:80
        },
        {
         level:32,
         yuanbao:0,
         qijing:0,
-        pianzhang:80,
-        xingpan:400
+        pianzhang:400,
+        xingpan:80
+       },
+       {
+        level:33,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:440,
+        xingpan:80
+       },
+       {
+        level:34,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:480,
+        xingpan:80
+       },
+       {
+        level:35,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:520,
+        xingpan:80
+       },
+       {
+        level:36,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:560,
+        xingpan:160
+       },
+       {
+        level:37,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:600,
+        xingpan:160
+       },
+       {
+        level:38,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:640,
+        xingpan:160
+       },
+       {
+        level:38,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:680,
+        xingpan:160
+       },
+       {
+        level:39,
+        yuanbao:0,
+        qijing:0,
+        pianzhang:720,
+        xingpan:160
        },
       ],
   },
@@ -342,13 +398,6 @@ Page({
          icon:'none'
        })
        return;
-    }
-    if (target>32) {
-      wx.showToast({
-        title: '32级后小窝还不知道，主公稍等下哦',
-        icon:'none'
-      })
-      return;
     }
     let totalyuanbao = 0;
     let totalpianzhang = 0;
