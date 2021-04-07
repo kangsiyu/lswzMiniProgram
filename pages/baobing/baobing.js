@@ -79,6 +79,15 @@ Page({
             tie:'55',
             baoshi:'15'
           },
+          {
+            titleResult: '13级枪兵',
+            title: '13级',
+            zhanli:'12.4',
+            mutou:'285',
+            liangshi:'375',
+            tie:'80',
+            baoshi:'20'
+          },
         ]
       },
       {
@@ -196,6 +205,15 @@ Page({
             liangshi:'300',
             tie:'25',
             baoshi:'20'
+          },
+          {
+            titleResult: '13级骑射手',
+            title: '13级',
+            zhanli:'12.4',
+            mutou:'290',
+            liangshi:'400',
+            tie:'35',
+            baoshi:'30'
           },
         ]
       },
@@ -315,6 +333,15 @@ Page({
             tie:'20',
             baoshi:'25'
           },
+          {
+            titleResult: '13级弩兵',
+            title: '13级',
+            zhanli:'12.4',
+            mutou:'165',
+            liangshi:'435',
+            tie:'30',
+            baoshi:'35'
+          },
         ]
       },
       {
@@ -432,6 +459,15 @@ Page({
             liangshi:'260',
             tie:'25',
             baoshi:'15'
+          },
+          {
+            titleResult: '13级攻城车',
+            title: '13级',
+            zhanli:'12.4',
+            mutou:'540',
+            liangshi:'390',
+            tie:'35',
+            baoshi:'20'
           },
         ]
       },

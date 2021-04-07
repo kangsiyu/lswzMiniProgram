@@ -43,12 +43,6 @@
 			</navigator>
 		</view>
 		<view class='nav-view-two'>
-			<navigator url='../星辰获取/星辰获取最优计算' class='nav_one'>
-				<text class='nav_text'>星辰获取计算</text>
-				<view class='icon-arrow'></view>
-			</navigator>
-		</view>
-		<view class='nav-view-two'>
 			<navigator url='../注灵玉计算/注灵玉计算' class='nav_one'>
 				<text class='nav_text'>注灵玉计算</text>
 				<view class='icon-arrow'></view>
@@ -96,18 +90,6 @@
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
-		<view class='nav-view-two'>
-			<navigator url='../天尊计算/天尊计算' class='nav_one'>
-				<text class='nav_text'>天尊计算计算</text>
-				<view class='icon-arrow'></view>
-			</navigator>
-		</view>
-		<!-- <view class='nav-view-two'>
-			<navigator url='../联盟情报/联盟情报首页' class='nav_one'>
-				<text class='nav_text'>联盟\军团情报</text>
-				<view class='icon-arrow'></view>
-			</navigator>
-		</view> -->
 		<view class='nav-view-two' wx:for="{{imageBrowers}}" wx:key="item">
 			<navigator url='{{item.url}}' class='nav_one'>
 				<text clxwass='nav_text'>{{item.title}}</text>
