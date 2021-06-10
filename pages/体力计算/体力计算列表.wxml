@@ -1,0 +1,22 @@
+<view class='tab_container'>
+  <view class="inputContainer">
+      <view class="titleContainer">
+      <text class="title">100体力数量</text>
+      </view>
+      <input class="input" placeholder="输入特级炼钢数量" auto-focus type="number" bindinput="humInput"></input>
+  </view>
+  <view class="inputContainer">
+      <view class="titleContainer">
+        <text class="title">50体力数量</text>
+      </view>
+      <input class="input" placeholder="输入紫色炼钢数量" type="number" bindinput="fifthInput"></input>
+  </view>
+  <view class="inputContainer">
+      <view class="titleContainer">
+        <text class="title">20体力数量</text>
+      </view>
+      <input class="input" placeholder="输入蓝色炼钢数量" type="number" bindinput="twentyInput"></input>
+  </view>
+  <text class="result">{{resultStr}}</text>
+  <button class="calculate" bindtap="calculateAction" style="width:100%">计算</button>
+</view>

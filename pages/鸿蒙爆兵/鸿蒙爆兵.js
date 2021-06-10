@@ -49,6 +49,13 @@ Page({
         meiqi:'15',
         select:false
       },
+      {
+        id: 4,
+        title: '13级鸿蒙',
+        zhanli:'0.8',
+        meiqi:'18',
+        select:false
+      },
     ],
   },
 

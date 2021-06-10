@@ -31,7 +31,9 @@
     "pages/联盟情报/联盟情报查看/联盟情报查看",
     "pages/联盟情报/我的上传/我的上传",
     "pages/求贤令/求贤令",
-    "pages/天尊计算/天尊计算"
+    "pages/天尊计算/天尊计算",
+    "pages/体力计算/体力计算列表",
+    "pages/大厅评级计算/大厅"
   ],
   "window": {
     "backgroundTextStyle": "light",

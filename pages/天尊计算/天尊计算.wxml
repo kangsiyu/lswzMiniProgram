@@ -1,2 +1,39 @@
 <!--pages/天尊计算/天尊计算.wxml-->
-<text>pages/天尊计算/天尊计算.wxml</text>
+<view>
+  <view>
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">骑兵天尊</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">弓弩天尊</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">步兵天尊</view>
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">车兵天尊</view>
+  </view>
+  <view>
+  <scroll-view scroll-y="true" style="height:{{winHeight-200}}px" enable-flex="true">
+    <view class="mainContainer" wx:for="{{currentData}}" wx:key="item" wx:for-item="starList"> 
+        <view class="starTitleContainer"> 
+            <text class="title">{{starList.title}}</text> 
+            <view class="starContainer"> 
+                <view class="starUnit" wx:for='{{starList.main}}' wx:key='mainList' wx:for-index="idx"> 
+                    <view class="starUnitTitleContainer"> 
+                        <text class="starUnitTitle">{{item.title}}</text> 
+                    </view> 
+                    <view class="inputContainer"> 
+                        <input class="input" type="number" placeholder="{{item.isLock?'未知':'等级'}}" value="{{item.level}}" bindinput="inputLevel" 
+                        bindfocus='inputFocus'
+                        data-name="{{starList.index}}-{{idx}}"></input> 
+                    </view> 
+                </view> 
+            </view> 
+        </view> 
+       </view> 
+  </scroll-view>
+  </view>
+  <text class="result">{{resultStr}}</text> 
+    <view class="buttonContainer">
+    <view class="button" bindtap="moniAction"> 
+      <text>模拟提升</text> 
+    </view> 
+    <view class="button" bindtap="saveAction"> 
+      <text>保存为已提升数据</text> 
+    </view> 
+    </view>
+</view>

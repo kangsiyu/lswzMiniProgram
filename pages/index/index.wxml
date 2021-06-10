@@ -90,6 +90,24 @@
 				<view class='icon-arrow'></view>
 			</navigator>
 		</view>
+		<view class='nav-view-two'>
+			<navigator url='../天尊计算/天尊计算' class='nav_one'>
+				<text class='nav_text'>天尊计算</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../体力计算/体力计算列表' class='nav_one'>
+				<text class='nav_text'>体力计算</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
+		<view class='nav-view-two'>
+			<navigator url='../大厅评级计算/大厅' class='nav_one'>
+				<text class='nav_text'>大厅评级计算</text>
+				<view class='icon-arrow'></view>
+			</navigator>
+		</view>
 		<view class='nav-view-two' wx:for="{{imageBrowers}}" wx:key="item">
 			<navigator url='{{item.url}}' class='nav_one'>
 				<text clxwass='nav_text'>{{item.title}}</text>

@@ -1,4 +1,5 @@
 // pages/鬼斧神工/鬼斧神工.js
+let interstitialAd = null
 Page({
 
   /**
@@ -10,13 +11,21 @@ Page({
      blueIronCount:0,
      greenIronCount:0,
      resultStr:'计算结果：',
+     adOnceShow:false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-fef7aee9500a9c68'
+      })
+      interstitialAd.onLoad(() => {})
+      interstitialAd.onError((err) => {})
+      interstitialAd.onClose(() => {})
+    } 
   },
 
   /**
@@ -92,6 +101,18 @@ Page({
     console.log('绿色炼钢'+this.data.greenIronCount);
   },
   calculateAction:function(){
+    if (interstitialAd && this.data.adOnceShow == false) {
+      var that = this;
+      that.setData({
+        adOnceShow:true
+       })
+      interstitialAd.show().catch((err) => {
+       console.error(err)
+       that.setData({
+        adOnceShow:false
+       })
+    })
+    }
     console.log('绿色炼钢'+this.data.greenIronCount);
     console.log('蓝色炼钢'+this.data.blueIronCount);
     console.log('紫色炼钢'+this.data.purpleIronCount);

@@ -15,8 +15,8 @@
 			<input class="input" type="number" placeholder="乐器编号" bindinput="inputNumber" data-name="{{idx}}" style="background-color:{{yueqiInputItem.color}}" cursor-spacing="60" value="{{yueqiInputItem.inputText}}"></input>
 		</view>
 	</view>
-	<view class="reset" wx:if='{{!needTip}}' bindtap="resetAction">
-	<view class="resetButton">重置</view>
+	<view class="reset" wx:if='{{!needTip}}'>
+	<view class="resetButton" bindtap="resetAction">重置</view>
 	</view>
   <view class='bottom'>
 <ad unit-id="adunit-68f8096dd3805681" ad-intervals="30"></ad>
